@@ -10,7 +10,7 @@ Progettare ed implementare un sistema software in grado di scaricare (download) 
 <li>Per i diagrammi UML si consiglia di utilizzare un tool; si consiglia <strong>draw.io</strong>, ma si possono utilizzare anche altri strumenti come PlantUML, Lucidchart, miro etc.</li>
 </ul>
 
-<h2><strong>Richieste</strong></h2>
+<h2><strong>Richieste particolari</strong></h2>
 <ul>
 <li>Il sistema deve poter supportare <strong>nuove sorgenti</strong>.</li>
 <li>Dopo la fase di download, deve essere effettuata la persistenza su file degli articoli usando lo stesso formato per tutti gli articoli di tutte le sorgenti. Potete utilizzare una <strong>libreria per serializzare e deserializzare</strong> gli articoli. L’implementazione senza libreria è opzionale.</li>
