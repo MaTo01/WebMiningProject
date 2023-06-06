@@ -32,7 +32,8 @@ Progettare ed implementare un sistema software in grado di scaricare (download) 
 <h2><strong>Estrazione termini</strong></h2>
 <ul>
 <li>Con <strong>termine</strong> si intende una parola che compare nel testo dell’articolo (titolo + corpo).</li>
-<li>Estrarre i 50 termini con maggior peso e memorizzarli in un file di testo (txt), dove ciascuna riga deve essere nel formato: “<termine> <peso>”.</li>
+<li>Estrarre i 50 termini con maggior peso e memorizzarli in un file di testo (txt), dove ciascuna riga deve essere nel formato: “termine
+  peso”.</li>
 <li>Se ci sono pareggi in termini di peso, utilizzare l’<strong>ordine alfabetico</strong> come criterio di ordinamento addizionale.</li>
 <li>Per estrarre i termini si può <strong>StringTokenizer</strong> oppure le funzionalità messe a disposizione da una libreria come <strong>CoreNLP</strong>(vedere le Pipeline ed in particolare il “passo” Tokenization).</li>
 </ul>
