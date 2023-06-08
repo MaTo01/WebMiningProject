@@ -1,4 +1,4 @@
 package it.unipd.eis;
 
-public class Source {
+public interface Source {
 }
