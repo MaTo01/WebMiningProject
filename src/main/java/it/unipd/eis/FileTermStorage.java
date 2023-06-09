@@ -1,92 +1,107 @@
 package it.unipd.eis;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
+import java.util.stream.Collectors;
 
 public class FileTermStorage implements TermStorage {
-    private String filePath;
+    private final String filePath;
 
     public FileTermStorage(String filePath) {
-        this.filePath = filePath;
+        this.filePath = filePath + "/terms.txt";
+        createDirectoryIfNotExists();
     }
 
     @Override
-    public void addTerms(Map<String, Integer> terms) {
-        Map<String, Integer> existingTerms = getAllTermsWithWeights();
-        existingTerms.putAll(terms);
+    public void addTerm(Term term) {
+        List<Term> existingTerms = getAllTerms();
+        existingTerms.add(term);
         saveTerms(existingTerms);
     }
 
     @Override
-    public void removeTerm(String term) {
-        Map<String, Integer> existingTerms = getAllTermsWithWeights();
+    public void removeTerm(Term term) {
+        List<Term> existingTerms = getAllTerms();
         existingTerms.remove(term);
         saveTerms(existingTerms);
     }
 
     @Override
-    public List<String> getTopTermsByWeight(int count) {
-        Map<String, Integer> terms = getAllTermsWithWeights();
-        List<String> topTerms = new ArrayList<>();
-
-        terms.entrySet()
-                .stream()
-                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+    public List<Term> getTopTermsByWeight(int count) {
+        List<Term> terms = getAllTerms();
+        return terms.stream()
+                .sorted(Comparator.comparingInt(Term::getWeight).reversed())
                 .limit(count)
-                .forEach(entry -> topTerms.add(entry.getKey()));
-
-        return topTerms;
+                .collect(Collectors.toList());
     }
 
     @Override
-    public List<String> getAllTerms() {
-        Map<String, Integer> terms = getAllTermsWithWeights();
-        return new ArrayList<>(terms.keySet());
-    }
-
-    @Override
-    public int getTermCount() {
-        Map<String, Integer> terms = getAllTermsWithWeights();
-        return terms.size();
-    }
-
-    @Override
-    public boolean containsTerm(String term) {
-        Map<String, Integer> terms = getAllTermsWithWeights();
-        return terms.containsKey(term);
-    }
-
-    @Override
-    public boolean isEmpty() {
-        Map<String, Integer> terms = getAllTermsWithWeights();
-        return terms.isEmpty();
-    }
-
-    @Override
-    public void clearStorage() {
-        saveTerms(new HashMap<>());
-    }
-
-    private Map<String, Integer> getAllTermsWithWeights() {
-        Map<String, Integer> terms = new HashMap<>();
-        try (ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(Paths.get(filePath)))) {
-            terms = (Map<String, Integer>) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
+    public List<Term> getAllTerms() {
+        List<Term> terms = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(":");
+                if (parts.length == 2) {
+                    String termName = parts[0].trim();
+                    int weight = Integer.parseInt(parts[1].trim());
+                    Term term = new Term(termName, weight);
+                    terms.add(term);
+                }
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return terms;
     }
 
-    private void saveTerms(Map<String, Integer> terms) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(Paths.get(filePath)))) {
-            oos.writeObject(terms);
+    @Override
+    public int getTermCount() {
+        List<Term> terms = getAllTerms();
+        return terms.size();
+    }
+
+    @Override
+    public boolean containsTerm(Term term) {
+        List<Term> terms = getAllTerms();
+        return terms.contains(term);
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return getTermCount() == 0;
+    }
+
+    @Override
+    public void clearStorage() {
+        saveTerms(new ArrayList<>());
+    }
+
+    private void saveTerms(List<Term> terms) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            for (Term term : terms) {
+                writer.write(term.getTerm() + ": " + term.getWeight());
+                writer.newLine();
+            }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void createDirectoryIfNotExists() {
+        File file = new File(filePath);
+        if (!file.exists()) {
+            try {
+                File directory = file.getParentFile();
+                if (!directory.exists()) {
+                    directory.mkdirs();
+                }
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

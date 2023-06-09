@@ -1,18 +1,17 @@
 package it.unipd.eis;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileArticleStorage implements ArticleStorage {
-    private String filePath;
+    private final String filePath;
 
     public FileArticleStorage(String filePath) {
         this.filePath = filePath;
+        createDirectoryIfNotExists();
     }
-
     @Override
     public void addArticle(Article article) {
         String articleFilePath = getArticleFilePath(article.getId());
@@ -92,5 +91,16 @@ public class FileArticleStorage implements ArticleStorage {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private void createDirectoryIfNotExists() {
+        Path directoryPath = Paths.get(filePath);
+        if (!Files.exists(directoryPath)) {
+            try {
+                Files.createDirectories(directoryPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
