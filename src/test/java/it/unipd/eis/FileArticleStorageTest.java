@@ -1,12 +1,12 @@
 package it.unipd.eis;
 
 import java.util.*;
-import java.nio.file.*;
+
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FileArticleStorageTest {
-    private static final String FILE_PATH = "./Storage/Articles";
+    private static final String FILE_PATH = "./Storage";
     private ArticleStorage articleStorage;
 
     @BeforeEach
@@ -15,32 +15,12 @@ public class FileArticleStorageTest {
         articleStorage.clearStorage();
     }
 
-    @AfterAll
-    static void cleanup() {
-        /*
-        try {
-            Path filePath = Paths.get(FILE_PATH);
-            Files.walk(filePath)
-                    .filter(Files::isRegularFile)
-                    .map(Path::toFile)
-                    .forEach(File::delete);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
-    }
-
     @Test
     public void testAddArticle() {
-        Article article1 = new Article("1", "Title 1", "Body text 1");
-        Article article2 = new Article("2", "Title 2", "Body text 2");
+        Article article1 = new Article("Title 1", "Body text 1");
+        Article article2 = new Article("Title 2", "Body text 2");
         articleStorage.addArticle(article1);
         articleStorage.addArticle(article2);
-
-        String filePath1 = FILE_PATH + "/" + article1.getId() + ".txt";
-        String filePath2 = FILE_PATH + "/" + article2.getId() + ".txt";
-        assertTrue(Files.exists(Paths.get(filePath1)));
-        assertTrue(Files.exists(Paths.get(filePath2)));
 
         assertEquals(2, articleStorage.getArticleCount());
         assertTrue(articleStorage.containsArticle(article1));
@@ -49,7 +29,7 @@ public class FileArticleStorageTest {
 
     @Test
     public void testRemoveArticle() {
-        Article article = new Article("1", "Title 1", "Body text 1");
+        Article article = new Article("Title 1", "Body text 1");
         articleStorage.addArticle(article);
         assertEquals(1, articleStorage.getArticleCount());
 
@@ -60,8 +40,8 @@ public class FileArticleStorageTest {
 
     @Test
     public void testGetAllArticles() {
-        Article article1 = new Article("1", "Title 1", "Body text 1");
-        Article article2 = new Article("2", "Title 2", "Body text 2");
+        Article article1 = new Article("Title 1", "Body text 1");
+        Article article2 = new Article("Title 2", "Body text 2");
         articleStorage.addArticle(article1);
         articleStorage.addArticle(article2);
 
@@ -75,18 +55,18 @@ public class FileArticleStorageTest {
     public void testGetArticleCount() {
         assertEquals(0, articleStorage.getArticleCount());
 
-        Article article1 = new Article("1", "Title 1", "Body text 1");
+        Article article1 = new Article("Title 1", "Body text 1");
         articleStorage.addArticle(article1);
         assertEquals(1, articleStorage.getArticleCount());
 
-        Article article2 = new Article("2", "Title 2", "Body text 2");
+        Article article2 = new Article("Title 2", "Body text 2");
         articleStorage.addArticle(article2);
         assertEquals(2, articleStorage.getArticleCount());
     }
 
     @Test
     public void testContainsArticle() {
-        Article article = new Article("1", "Title 1", "Body text 1");
+        Article article = new Article("Title 1", "Body text 1");
         assertFalse(articleStorage.containsArticle(article));
 
         articleStorage.addArticle(article);
@@ -95,7 +75,7 @@ public class FileArticleStorageTest {
 
     @Test
     public void testClearStorage() {
-        Article article1 = new Article("1", "Title 1", "Body text 1");
+        Article article1 = new Article("Title 1", "Body text 1");
         articleStorage.addArticle(article1);
         assertFalse(articleStorage.isEmpty());
 
@@ -107,8 +87,8 @@ public class FileArticleStorageTest {
     public void testIsEmpty() {
         assertTrue(articleStorage.isEmpty());
 
-        Article article1 = new Article("1", "Title 1", "Body text 1");
-        Article article2 = new Article("2", "Title 2", "Body text 2");
+        Article article1 = new Article("Title 1", "Body text 1");
+        Article article2 = new Article("Title 2", "Body text 2");
         articleStorage.addArticle(article1);
         articleStorage.addArticle(article2);
         assertFalse(articleStorage.isEmpty());

@@ -1,34 +1,18 @@
 package it.unipd.eis;
 
+import java.util.*;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.List;
-
 public class FileTermStorageTest {
-    private static final String FILE_PATH = "./Storage/Terms";
+    private static final String FILE_PATH = "./Storage";
     private TermStorage termStorage;
 
     @BeforeEach
     public void setup() {
         termStorage = new FileTermStorage(FILE_PATH);
         termStorage.clearStorage();
-    }
-
-    @AfterAll
-    static void cleanup() {
-        /*
-        try {
-            Path filePath = Paths.get(FILE_PATH);
-            Files.walk(filePath)
-                    .filter(Files::isRegularFile)
-                    .map(Path::toFile)
-                    .forEach(File::delete);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
     }
 
     @Test
@@ -91,18 +75,6 @@ public class FileTermStorageTest {
     }
 
     @Test
-    void testIsEmpty() {
-        assertTrue(termStorage.isEmpty());
-
-        Term term1 = new Term("zio", 5);
-        Term term2 = new Term("pera", 3);
-        termStorage.addTerm(term1);
-        termStorage.addTerm(term2);
-
-        assertFalse(termStorage.isEmpty());
-    }
-
-    @Test
     void testClearStorage() {
         Term term1 = new Term("zio", 5);
         Term term2 = new Term("pera", 3);
@@ -116,5 +88,19 @@ public class FileTermStorageTest {
 
         assertTrue(termStorage.isEmpty());
     }
+
+    @Test
+    void testIsEmpty() {
+        assertTrue(termStorage.isEmpty());
+
+        Term term1 = new Term("zio", 5);
+        Term term2 = new Term("pera", 3);
+        termStorage.addTerm(term1);
+        termStorage.addTerm(term2);
+
+        assertFalse(termStorage.isEmpty());
+    }
+
+
 
 }
