@@ -1,106 +1,122 @@
 package it.unipd.eis;
 
 import java.io.*;
-import java.nio.file.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
+/**
+ * A class that implements the {@link ArticleStorage} interface and provides storage for articles
+ * in a file-based storage system.
+ */
 public class FileArticleStorage implements ArticleStorage {
     private final String filePath;
 
+    /**
+     * Constructs a new instance of {@code FileArticleStorage} with the specified file path.
+     *
+     * @param filePath the path of the file used for storing the articles
+     */
     public FileArticleStorage(String filePath) {
-        this.filePath = filePath;
-        createDirectoryIfNotExists();
+        this.filePath = filePath + "/articles.json";
+        StorageUtils.createDirectoryIfNotExists(filePath);
     }
+
+    /**
+     * Assigns a unique ID to the article using UUID.randomUUID() and
+     * then add it to the storage file.
+     *
+     * @param article the article to be added
+     */
     @Override
     public void addArticle(Article article) {
-        String articleFilePath = getArticleFilePath(article.getId());
-        try (PrintWriter writer = new PrintWriter(new FileWriter(articleFilePath))) {
-            writer.println(article.getTitle());
-            writer.println(article.getBodyText());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        article.setId(UUID.randomUUID().toString());
+        List<Article> existingArticles = getAllArticles();
+        existingArticles.add(article);
+        saveArticles(existingArticles);
     }
 
+    /**
+     * Removes an article from the storage.
+     *
+     * @param article the article to be removed
+     */
     @Override
     public void removeArticle(Article article) {
-        String articleFilePath = getArticleFilePath(article.getId());
-        try {
-            Files.deleteIfExists(Paths.get(articleFilePath));
+        List<Article> existingArticles = getAllArticles();
+        existingArticles.remove(article);
+        saveArticles(existingArticles);
+    }
+
+    /**
+     * Retrieves all the articles stored in the storage.
+     *
+     * @return a list of all the articles in the storage
+     */
+    @Override
+    public List<Article> getAllArticles() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            Gson gson = new Gson();
+            return gson.fromJson(reader, new TypeToken<List<Article>>(){}.getType());
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return new ArrayList<>();
     }
 
-    @Override
-    public List<Article> getAllArticles() {
-        List<Article> articles = new ArrayList<>();
-        File folder = new File(filePath);
-        File[] files = folder.listFiles();
-        if (files != null) {
-            for (File file : files) {
-                Article article = readArticleFromFile(file);
-                if (article != null) {
-                    articles.add(article);
-                }
-            }
-        }
-        return articles;
-    }
-
+    /**
+     * Retrieves the number of articles stored in the storage.
+     *
+     * @return the number of articles in the storage
+     */
     @Override
     public int getArticleCount() {
         return getAllArticles().size();
     }
 
+    /**
+     * Checks if the storage contains the specified article.
+     *
+     * @param article the article to be checked
+     * @return {@code true} if the storage contains the article, {@code false} otherwise
+     */
     @Override
     public boolean containsArticle(Article article) {
-        String articleFilePath = getArticleFilePath(article.getId());
-        File file = new File(articleFilePath);
-        return file.exists();
+        List<Article> articles = getAllArticles();
+        return articles.contains(article);
     }
 
+    /**
+     * Checks if the storage is empty.
+     *
+     * @return {@code true} if the storage is empty, {@code false} otherwise
+     */
     @Override
     public boolean isEmpty() {
         return getAllArticles().isEmpty();
     }
 
+    /**
+     * Clears the storage, removing all the articles.
+     */
     @Override
     public void clearStorage() {
-        File folder = new File(filePath);
-        File[] files = folder.listFiles();
-        if (files != null) {
-            for (File file : files) {
-                file.delete();
-            }
-        }
+        saveArticles(new ArrayList<>());
     }
 
-    private String getArticleFilePath(String articleId) {
-        return filePath + "/" + articleId + ".txt";
-    }
-
-    private Article readArticleFromFile(File file) {
-        String articleId = file.getName().replace(".txt", "");
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String title = reader.readLine();
-            String body = reader.readLine();
-            return new Article(articleId, title, body);
+    /**
+     * Saves the list of articles to the file storage.
+     *
+     * @param articles the list of articles to be saved
+     */
+    private void saveArticles(List<Article> articles) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            writer.write(gson.toJson(articles));
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        return null;
-    }
-
-    private void createDirectoryIfNotExists() {
-        Path directoryPath = Paths.get(filePath);
-        if (!Files.exists(directoryPath)) {
-            try {
-                Files.createDirectories(directoryPath);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 }
