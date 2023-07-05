@@ -1,6 +1,6 @@
 package it.unipd.eis;
 
 public interface Source {
-    void downloadArticles(String keyword);
+    void downloadArticles(String query);
     void deserializeArticles();
 }
