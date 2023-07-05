@@ -1,7 +1,6 @@
 package it.unipd.eis;
 
-import com.apiguardian.*;
-import com.apiguardian.bean.Article;
+import com.apiguardian.GuardianContentApi;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 import java.io.BufferedReader;

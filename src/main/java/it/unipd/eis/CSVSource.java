@@ -19,12 +19,12 @@ public class CSVSource implements Source {
             String fieldList = reader.readLine().toLowerCase();
             int titleIndex = ArrayUtils.indexOf(fieldList.split(","), "title");
 
-            String line;
             FileArticleStorage fas = new FileArticleStorage("Storage");
+            String line;
             while((line = reader.readLine()) != null) {
                 String title = line.split(",")[titleIndex];
                 String bodyText = line.split("\"")[1];
-                fas.addArticle(new it.unipd.eis.Article(
+                fas.addArticle(new Article(
                         title,
                         bodyText
                 ));
