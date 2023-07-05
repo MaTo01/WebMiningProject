@@ -18,7 +18,7 @@ public class Article implements Serializable {
      * @param body  the body text of the article
      */
     public Article(String title, String body) {
-        this.id= "";
+        this.id = "";
         this.title = title;
         this.body = body;
     }
