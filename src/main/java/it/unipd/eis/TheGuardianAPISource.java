@@ -6,10 +6,11 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class TheGuardianAPISource implements Source {
 
-    private com.apiguardian.bean.Article[] responseArticles;
+    private ArrayList<Article> articles;
     private String apiKey;
 
     public TheGuardianAPISource() {
@@ -19,20 +20,40 @@ public class TheGuardianAPISource implements Source {
     public void downloadArticles(String query) {
         GuardianContentApi guardianApi = new GuardianContentApi(apiKey);
         try {
-            responseArticles = guardianApi.getContent(query).getResults();
+            com.apiguardian.bean.Response response = guardianApi.getContent(query);
+
+            if(response.getStatus() == "ok") {
+                com.apiguardian.bean.Article[] responseArticles = response.getResults();
+
+                for (com.apiguardian.bean.Article a : responseArticles) {
+                    articles.add(new Article(
+                            a.getWebTitle(),
+                            a.getBodyText()
+                    ));
+                }
+
+                serializeArticles();
+            } else {
+                //throw some kind of exception
+            }
         } catch(UnirestException e) {
             e.printStackTrace();
         }
     }
 
     @Override
-    public void deserializeArticles() {
-        FileArticleStorage fas = new FileArticleStorage("Storage");
-        for (com.apiguardian.bean.Article a : responseArticles) {
-            fas.addArticle(new it.unipd.eis.Article(
-                    a.getWebTitle(),
-                    a.getBodyText()
-            ));
+    public void serializeArticles() {
+        if(articles.size() > 0) {
+            FileArticleStorage fas = new FileArticleStorage("Storage");
+
+            for (Article a : articles) {
+                fas.addArticle(new it.unipd.eis.Article(
+                        a.getTitle(),
+                        a.getBody()
+                ));
+            }
+        } else {
+            throw new IllegalStateException();
         }
     }
 
