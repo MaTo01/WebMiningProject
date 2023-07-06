@@ -15,14 +15,23 @@ public class App
             cmd = parser.parse(options, args);
 
             if(cmd.hasOption("d")) {
-                TheGuardianAPISource guardianSource = new TheGuardianAPISource();
-                CSVSource csvSource = new CSVSource();
+                String query = cmd.getOptionValue("d");
 
-                //controllo su valore null
-                guardianSource.downloadArticles(cmd.getOptionValue("d"));
+                if(!query.equals("")) {
+                    TheGuardianAPISource theGuardianSource = new TheGuardianAPISource();
+                    CSVSource csvSource = new CSVSource();
+
+                    theGuardianSource.downloadArticles(query);
+                    csvSource.downloadArticles();
+                } else {
+                    throw new IllegalArgumentException();
+                }
             }
-        } catch(ParseException pe) {
-
+            if(cmd.hasOption("e")) {
+                //term extraction goes here
+            }
+        } catch(ParseException | IllegalArgumentException e) {
+            e.printStackTrace();
         }
     }
 }
