@@ -57,6 +57,15 @@ public class FileArticleStorage implements ArticleStorage {
      */
     @Override
     public List<Article> getAllArticles() {
+        File f = new File(filePath);
+        if(!f.isFile()) {
+            try {
+                f.createNewFile();
+            } catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
+
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             Gson gson = new Gson();
             return gson.fromJson(reader, new TypeToken<List<Article>>(){}.getType());
