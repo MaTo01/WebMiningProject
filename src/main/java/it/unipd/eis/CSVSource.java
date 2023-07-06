@@ -8,8 +8,9 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class CSVSource extends Source {
+    public CSVSource() { }
     @Override
-    public void downloadArticles(String keyword) {
+    public void downloadArticles() {
         try (BufferedReader reader = new BufferedReader(new FileReader("dove minchia mettiamo i file csv"))) {
             Iterable<CSVRecord> records = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader);
 
@@ -27,5 +28,9 @@ public class CSVSource extends Source {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void downloadArticles(String query) {
+        downloadArticles();
     }
 }

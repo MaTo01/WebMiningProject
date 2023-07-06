@@ -9,10 +9,19 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class TheGuardianAPISource extends Source {
-    private String apiKey;
+    private static String apiKey;
+    private String apiKeyFilePath = "Storage/TheGuardianAPIKey.txt";
 
     public TheGuardianAPISource() {
         getApiKey();
+    }
+    public TheGuardianAPISource(String filePath) {
+        apiKeyFilePath = filePath;
+        getApiKey();
+    }
+
+    public void downloadArticles() {
+        downloadArticles("");
     }
 
     @Override
@@ -33,15 +42,15 @@ public class TheGuardianAPISource extends Source {
 
                 serializeArticles();
             } else {
-                throw new RuntimeException("AAAAAAAAAAAAAAAAAAAAA");
+                throw new HttpResponseException(400, "Download request failed");
             }
-        } catch(UnirestException e) {
+        } catch(UnirestException | HttpResponseException e) {
             e.printStackTrace();
         }
     }
 
     private void getApiKey() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("Storage/guardianApiKey.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(apiKeyFilePath))) {
             apiKey = reader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
