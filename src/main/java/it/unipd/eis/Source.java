@@ -1,16 +1,23 @@
 package it.unipd.eis;
 
-public interface Source {
-    /**
-     * Downloads articles from the source.
-     *
-     * @param query the term(s) used for the article search
-     */
-    void downloadArticles(String query);
+import java.util.ArrayList;
 
-    /**
-     * Saves the articles to a storage.
-     * @throws IllegalStateException if called before articles are obtained through downloadArticles
-     */
-    void serializeArticles() throws IllegalStateException;
+public abstract class Source {
+    ArrayList<Article> articles;
+    ArticleStorage storage;
+
+    public Source() {
+        storage = new FileArticleStorage("Storage");
+    }
+
+    abstract public void downloadArticles(String query);
+
+    protected void serializeArticles(){
+        for (Article a : articles) {
+            storage.addArticle(new it.unipd.eis.Article(
+                    a.getTitle(),
+                    a.getBody()
+            ));
+        }
+    }
 }

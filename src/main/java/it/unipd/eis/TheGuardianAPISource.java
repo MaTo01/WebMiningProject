@@ -6,16 +6,14 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class TheGuardianAPISource implements Source {
-
-    private ArrayList<Article> articles;
+public class TheGuardianAPISource extends Source {
     private String apiKey;
 
     public TheGuardianAPISource() {
         getApiKey();
     }
+
     @Override
     public void downloadArticles(String query) {
         GuardianContentApi guardianApi = new GuardianContentApi(apiKey);
@@ -38,22 +36,6 @@ public class TheGuardianAPISource implements Source {
             }
         } catch(UnirestException e) {
             e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void serializeArticles() {
-        if(articles.size() > 0) {
-            FileArticleStorage fas = new FileArticleStorage("Storage");
-
-            for (Article a : articles) {
-                fas.addArticle(new it.unipd.eis.Article(
-                        a.getTitle(),
-                        a.getBody()
-                ));
-            }
-        } else {
-            throw new IllegalStateException();
         }
     }
 
