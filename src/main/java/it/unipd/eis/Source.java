@@ -7,6 +7,7 @@ public abstract class Source {
     ArticleStorage storage;
 
     public Source() {
+        articles = new ArrayList<Article>();
         storage = new FileArticleStorage("Storage");
     }
 
@@ -14,10 +15,7 @@ public abstract class Source {
 
     protected void serializeArticles(){
         for (Article a : articles) {
-            storage.addArticle(new it.unipd.eis.Article(
-                    a.getTitle(),
-                    a.getBody()
-            ));
+            storage.addArticle(a);
         }
     }
 }
