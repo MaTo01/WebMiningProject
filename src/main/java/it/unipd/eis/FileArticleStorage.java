@@ -33,7 +33,7 @@ public class FileArticleStorage implements ArticleStorage {
     @Override
     public void addArticle(Article article) {
         article.setId(UUID.randomUUID().toString());
-        List<Article> existingArticles = getAllArticles();
+        ArrayList<Article> existingArticles = getAllArticles();
         existingArticles.add(article);
         saveArticles(existingArticles);
     }
@@ -45,7 +45,7 @@ public class FileArticleStorage implements ArticleStorage {
      */
     @Override
     public void removeArticle(Article article) {
-        List<Article> existingArticles = getAllArticles();
+        ArrayList<Article> existingArticles = getAllArticles();
         existingArticles.remove(article);
         saveArticles(existingArticles);
     }
@@ -56,19 +56,19 @@ public class FileArticleStorage implements ArticleStorage {
      * @return a list of all the articles in the storage
      */
     @Override
-    public List<Article> getAllArticles() {
+    public ArrayList<Article> getAllArticles() {
         File f = new File(filePath);
-        if(!f.isFile()) {
+        if (!f.isFile()) {
             try {
                 f.createNewFile();
-            } catch(IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             Gson gson = new Gson();
-            return gson.fromJson(reader, new TypeToken<List<Article>>(){}.getType());
+            return gson.fromJson(reader, new TypeToken<ArrayList<Article>>() {}.getType());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -93,7 +93,7 @@ public class FileArticleStorage implements ArticleStorage {
      */
     @Override
     public boolean containsArticle(Article article) {
-        List<Article> articles = getAllArticles();
+        ArrayList<Article> articles = getAllArticles();
         return articles.contains(article);
     }
 
@@ -120,7 +120,7 @@ public class FileArticleStorage implements ArticleStorage {
      *
      * @param articles the list of articles to be saved
      */
-    private void saveArticles(List<Article> articles) {
+    private void saveArticles(ArrayList<Article> articles) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             writer.write(gson.toJson(articles));
