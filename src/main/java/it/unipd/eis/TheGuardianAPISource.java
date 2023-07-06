@@ -2,6 +2,7 @@ package it.unipd.eis;
 
 import com.apiguardian.GuardianContentApi;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import org.apache.http.client.HttpResponseException;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -20,7 +21,7 @@ public class TheGuardianAPISource extends Source {
         try {
             com.apiguardian.bean.Response response = guardianApi.getContent(query);
 
-            if(response.getStatus() == "ok") {
+            if(response.getStatus().equals("ok")) {
                 com.apiguardian.bean.Article[] responseArticles = response.getResults();
 
                 for (com.apiguardian.bean.Article a : responseArticles) {
@@ -32,7 +33,7 @@ public class TheGuardianAPISource extends Source {
 
                 serializeArticles();
             } else {
-                //throw some kind of exception
+                throw new RuntimeException("AAAAAAAAAAAAAAAAAAAAA");
             }
         } catch(UnirestException e) {
             e.printStackTrace();
