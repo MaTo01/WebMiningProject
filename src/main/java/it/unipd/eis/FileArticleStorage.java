@@ -17,11 +17,12 @@ public class FileArticleStorage implements ArticleStorage {
     /**
      * Constructs a new instance of {@code FileArticleStorage} with the specified file path.
      *
-     * @param filePath the path of the file used for storing the articles
+     * @param dirPath the path of the directory used for storing the articles file
      */
-    public FileArticleStorage(String filePath) {
-        this.filePath = filePath + "/articles.json";
-        StorageUtils.createDirectoryIfNotExists(filePath);
+    public FileArticleStorage(String dirPath) {
+        StorageUtils.createDirectoryIfNotExists(dirPath);
+        this.filePath = dirPath + "/articles.json";
+        StorageUtils.createFileIfNotExists(filePath);
     }
 
     /**
@@ -60,15 +61,6 @@ public class FileArticleStorage implements ArticleStorage {
      */
     @Override
     public ArrayList<Article> getAllArticles() {
-        File f = new File(filePath);
-        if (!f.isFile()) {
-            try {
-                f.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             Gson gson = new Gson();
             return gson.fromJson(reader, new TypeToken<ArrayList<Article>>() {}.getType());

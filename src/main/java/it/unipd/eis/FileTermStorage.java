@@ -14,11 +14,12 @@ public class FileTermStorage implements TermStorage {
     /**
      * Constructs a FileTermStorage object with the specified file path.
      *
-     * @param filePath the path to the file used for storing the terms
+     * @param dirPath the path to the directory used for storing the terms file
      */
-    public FileTermStorage(String filePath) {
-        this.filePath = filePath + "/terms.txt";
-        StorageUtils.createDirectoryIfNotExists(filePath);
+    public FileTermStorage(String dirPath) {
+        StorageUtils.createDirectoryIfNotExists(dirPath);
+        this.filePath = dirPath + "/terms.txt";
+        StorageUtils.createFileIfNotExists(filePath);
     }
 
     /**

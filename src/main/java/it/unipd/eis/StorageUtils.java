@@ -11,10 +11,21 @@ public class StorageUtils {
      *
      * @param filePath the path to the file or directory
      */
-    public static void createDirectoryIfNotExists(String filePath) {
-        File directory = new File(filePath);
+    public static void createDirectoryIfNotExists(String dirPath) {
+        File directory = new File(dirPath);
         if (!directory.exists()) {
             directory.mkdirs();
+        }
+    }
+
+    public static void createFileIfNotExists(String filePath) {
+        File file = new File(filePath);
+        if (!file.isFile()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
