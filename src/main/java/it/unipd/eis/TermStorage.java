@@ -13,6 +13,7 @@ public interface TermStorage {
      */
     void addTerm(Term term);
 
+    void addTerms(List<Term> terms);
     /**
      * Removes a term from the storage.
      *
