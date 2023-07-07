@@ -34,7 +34,11 @@ public class TermExtractor {
 
         Collections.sort(terms);
 
-        termStorage.addTerms(terms);
+        ArrayList<Term> topTerms = new ArrayList<>();
+        for(int i = 0; i < numTermsToSave; i++) {
+            topTerms.add(terms.get(i));
+        }
+        termStorage.addTerms(topTerms);
     }
 
     private static ArrayList<String> getStopList() {
