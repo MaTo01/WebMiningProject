@@ -9,6 +9,10 @@ public class Term {
     private String term;
     private int weight;
 
+    public Term(String term) {
+        this.term = term;
+        this.weight = 0;
+    }
     /**
      * Constructs a Term object with the specified term and weight.
      *
