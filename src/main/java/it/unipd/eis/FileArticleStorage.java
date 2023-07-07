@@ -34,6 +34,9 @@ public class FileArticleStorage implements ArticleStorage {
     public void addArticle(Article article) {
         article.setId(UUID.randomUUID().toString());
         ArrayList<Article> existingArticles = getAllArticles();
+        if(existingArticles == null) {
+            existingArticles = new ArrayList<>();
+        }
         existingArticles.add(article);
         saveArticles(existingArticles);
     }
