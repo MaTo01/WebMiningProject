@@ -34,6 +34,13 @@ public class FileTermStorage implements TermStorage {
         saveTerms(existingTerms);
     }
 
+    @Override
+    public void addTerms(List<Term> terms) {
+        List<Term> existingTerms = getAllTerms();
+        existingTerms.addAll(terms);
+        saveTerms(existingTerms);
+    }
+
     /**
      * Removes a term from the storage.
      *
