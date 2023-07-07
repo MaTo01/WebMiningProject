@@ -1,4 +1,5 @@
 package it.unipd.eis;
 
-public interface TermExtractor {
+public class TermExtractor {
+
 }
