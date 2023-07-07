@@ -11,7 +11,7 @@ public class CSVSource extends Source {
     public CSVSource() { }
     @Override
     public void downloadArticles() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("dove minchia mettiamo i file csv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("Sources/CSV/nytimes_articles_v2.csv"))) {
             Iterable<CSVRecord> records = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader);
 
             for (CSVRecord record : records) {
