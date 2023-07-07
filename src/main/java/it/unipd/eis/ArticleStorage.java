@@ -14,6 +14,7 @@ public interface ArticleStorage {
      */
     void addArticle(Article article);
 
+    void addArticles(List<Article> articles);
     /**
      * Removes an article from the storage.
      *

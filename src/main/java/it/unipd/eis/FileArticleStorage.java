@@ -42,6 +42,19 @@ public class FileArticleStorage implements ArticleStorage {
         saveArticles(existingArticles);
     }
 
+    @Override
+    public void addArticles(List<Article> articles) {
+        for(Article a : articles) {
+            a.setId(UUID.randomUUID().toString());
+        }
+        ArrayList<Article> existingArticles = getAllArticles();
+        if(existingArticles == null) {
+            existingArticles = new ArrayList<>();
+        }
+        existingArticles.addAll(articles);
+        saveArticles(existingArticles);
+    }
+
     /**
      * Removes an article from the storage.
      *
