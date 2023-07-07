@@ -9,7 +9,7 @@ public class StorageUtils {
     /**
      * Creates the directory if it does not exist for the specified file path.
      *
-     * @param filePath the path to the file or directory
+     * @param dirPath the path to the directory
      */
     public static void createDirectoryIfNotExists(String dirPath) {
         File directory = new File(dirPath);
