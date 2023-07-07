@@ -3,11 +3,10 @@ package it.unipd.eis;
 import java.util.ArrayList;
 
 public abstract class Source {
-    protected ArrayList<Article> articles;
+    protected ArrayList<Article> articles = new ArrayList<>();
     private static ArticleStorage storage;
 
     public Source() {
-        articles = new ArrayList<>();
         storage = new FileArticleStorage("Storage");
     }
 
