@@ -69,8 +69,7 @@ public class TermExtractor {
     }
 
     private String[] splitAndReformat(String s) {
-        s = s.replaceAll("’", " ");
-        s = s.replaceAll("[^a-zA-Z0-9\\s]", "");
+        s = s.replaceAll("[^a-zA-Z0-9\\s]", " ");
         return s.split(" ");
     }
 }
