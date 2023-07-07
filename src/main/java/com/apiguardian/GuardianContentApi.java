@@ -48,6 +48,7 @@ public class GuardianContentApi {
   private Date toDate;
   private Date fromDate;
   private int pageSize = 0;
+  private int page = 1;
 
   public GuardianContentApi(final String apiKey) {
     this.apiKey = apiKey;
@@ -67,6 +68,10 @@ public class GuardianContentApi {
 
   public void setPageSize(int size) {
     this.pageSize = size;
+  }
+
+  public void setPage(int page) {
+    this.page = page;
   }
 
   public Response getContent() throws UnirestException {
@@ -107,6 +112,10 @@ public class GuardianContentApi {
 
     if (pageSize > 0) {
       request.queryString("page-size", pageSize);
+    }
+
+    if(page > 1) {
+      request.queryString("page", page);
     }
 
     request.queryString("show-fields", "all");
