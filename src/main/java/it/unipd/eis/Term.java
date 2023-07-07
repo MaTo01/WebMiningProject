@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * A class representing a term.
  */
-public class Term {
+public class Term implements Comparable<Term> {
     private String term;
     private int weight;
 
@@ -75,7 +75,7 @@ public class Term {
             return false;
         }
         Term other = (Term) obj;
-        return Objects.equals(term, other.term);
+        return this.term.equals(other.getTerm());
     }
 
     /**
@@ -86,5 +86,19 @@ public class Term {
     @Override
     public int hashCode() {
         return Objects.hash(term);
+    }
+
+    @Override
+    public int compareTo(Term o) {
+        if(this.weight == o.weight) {
+            if(this.term.compareTo(o.term) > 0)
+                return 1;
+            else
+                return -1;
+        } else if (this.weight > o.weight) {
+            return -1;
+        } else {
+            return 1;
+        }
     }
 }
