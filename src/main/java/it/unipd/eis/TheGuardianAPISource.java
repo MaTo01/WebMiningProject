@@ -11,18 +11,14 @@ import java.io.IOException;
 public class TheGuardianAPISource extends Source {
     private static String apiKey;
     private String apiKeyFilePath = "Storage/TheGuardianAPIKey.txt";
-    private int pageSize = 0;
+    private static final int pageSize = 1000;
 
     public TheGuardianAPISource() {
         getApiKey();
     }
-    public TheGuardianAPISource(String filePath) {
-        apiKeyFilePath = filePath;
+    public TheGuardianAPISource(String keyPath) {
+        apiKeyFilePath = keyPath;
         getApiKey();
-    }
-
-    public void setPageSize(int size) {
-        this.pageSize = size;
     }
 
     public void downloadArticles() {
@@ -32,9 +28,8 @@ public class TheGuardianAPISource extends Source {
     @Override
     public void downloadArticles(String query) {
         GuardianContentApi guardianApi = new GuardianContentApi(apiKey);
-        if(this.pageSize > 0) {
-            guardianApi.setPageSize(this.pageSize);
-        }
+        guardianApi.setPageSize(pageSize);
+
         try {
             com.apiguardian.bean.Response response = guardianApi.getContent(query);
 
