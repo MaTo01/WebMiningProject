@@ -10,14 +10,11 @@ import java.io.IOException;
 
 public class TheGuardianAPISource extends Source {
     private static String apiKey;
-    private String apiKeyFilePath = "Storage/TheGuardianAPIKey.txt";
-    private static final int pageSize = 1000;
+    private final String apiKeyFilePath = "Storage/TheGuardianAPIKey.txt";
+    private static final int pageSize = 200;
+    private static final int numArticles = 1000;
 
     public TheGuardianAPISource() {
-        getApiKey();
-    }
-    public TheGuardianAPISource(String keyPath) {
-        apiKeyFilePath = keyPath;
         getApiKey();
     }
 
@@ -31,22 +28,25 @@ public class TheGuardianAPISource extends Source {
         guardianApi.setPageSize(pageSize);
 
         try {
-            com.apiguardian.bean.Response response = guardianApi.getContent(query);
+            for (int i = 1; i <= numArticles/pageSize; i++) {
+                guardianApi.setPage(i);
+                com.apiguardian.bean.Response response = guardianApi.getContent(query);
+                if(response.getStatus().equals("ok")) {
 
-            if(response.getStatus().equals("ok")) {
-                com.apiguardian.bean.Article[] responseArticles = response.getResults();
-
-                for (com.apiguardian.bean.Article a : responseArticles) {
-                    articles.add(new Article(
-                            a.getWebTitle(),
-                            a.getBodyText()
-                    ));
+                    int k = response.getCurrentPage();
+                    com.apiguardian.bean.Article[] responseArticles = response.getResults();
+                    for (com.apiguardian.bean.Article a : responseArticles) {
+                        articles.add(new Article(
+                                a.getWebTitle(),
+                                a.getBodyText()
+                        ));
+                    }
+                } else {
+                    throw new HttpResponseException(400, "Download request failed");
                 }
-
-                serializeArticles();
-            } else {
-                throw new HttpResponseException(400, "Download request failed");
             }
+
+            serializeArticles();
         } catch(UnirestException | HttpResponseException e) {
             e.printStackTrace();
         }
