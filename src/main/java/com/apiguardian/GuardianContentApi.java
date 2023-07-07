@@ -47,6 +47,7 @@ public class GuardianContentApi {
   private String tag;
   private Date toDate;
   private Date fromDate;
+  private int pageSize = 0;
 
   public GuardianContentApi(final String apiKey) {
     this.apiKey = apiKey;
@@ -62,6 +63,10 @@ public class GuardianContentApi {
 
   public void setToDate(Date date) {
     this.toDate = date;
+  }
+
+  public void setPageSize(int size) {
+    this.pageSize = size;
   }
 
   public Response getContent() throws UnirestException {
@@ -98,6 +103,10 @@ public class GuardianContentApi {
     }
     if (toDate != null){
       request.queryString("to-date", dateFormat.format(toDate));
+    }
+
+    if (pageSize > 0) {
+      request.queryString("page-size", pageSize);
     }
 
     request.queryString("show-fields", "all");

@@ -7,6 +7,7 @@ public class App
     public static void main(String[] args) {
         Options options = new Options();
         options.addOption("d", true, "Download articles based on a key word/phrase");
+        options.addOption("n", true, "Specify the number of articles to download");
         options.addOption("e", false, "Extract the terms with the highest weight");
 
         CommandLineParser parser = new DefaultParser();
@@ -20,6 +21,11 @@ public class App
                 if(!query.equals("")) {
                     TheGuardianAPISource theGuardianSource = new TheGuardianAPISource();
                     CSVSource csvSource = new CSVSource();
+
+                    if(cmd.hasOption("n")) {
+                        int pageSize = Integer.parseInt(cmd.getOptionValue("n"));
+                        theGuardianSource.setPageSize(pageSize);
+                    }
 
                     theGuardianSource.downloadArticles(query);
                     csvSource.downloadArticles();
