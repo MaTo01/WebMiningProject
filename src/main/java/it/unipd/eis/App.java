@@ -27,6 +27,7 @@ public class App
                         theGuardianSource.setPageSize(pageSize);
                     }
 
+                    Source.clearStorage();
                     theGuardianSource.downloadArticles(query);
                     csvSource.downloadArticles();
                 } else {

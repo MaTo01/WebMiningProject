@@ -14,9 +14,13 @@ public abstract class Source {
     abstract public void downloadArticles();
     abstract public void downloadArticles(String query);
 
-    protected void serializeArticles(){
+    protected void serializeArticles() {
         for (Article a : articles) {
             storage.addArticle(a);
         }
+    }
+
+    public static void clearStorage() {
+        storage.clearStorage();
     }
 }
