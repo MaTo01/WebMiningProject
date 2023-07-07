@@ -24,12 +24,17 @@ public class App
                     Source.clearStorage();
                     theGuardianSource.downloadArticles(query);
                     csvSource.downloadArticles();
+
+                    System.out.println("Download and serialization of articles complete.");
                 } else {
                     throw new IllegalArgumentException();
                 }
             }
             if(cmd.hasOption("e")) {
-                //term extraction goes here
+                TermExtractor extractor = new TermExtractor();
+                extractor.extractTerms();
+
+                System.out.println("Extraction of top terms complete.");
             }
         } catch(ParseException | IllegalArgumentException e) {
             e.printStackTrace();
