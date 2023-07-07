@@ -34,6 +34,14 @@ public class FileTermStorage implements TermStorage {
         saveTerms(existingTerms);
     }
 
+    /**
+     * Adds a list of terms to the system.
+     * If there are existing terms, the new terms are added to the existing list.
+     * If there are no existing terms, a new list is created.
+     * Finally, the list of terms is added to the storage.
+     *
+     * @param terms the list of terms to add
+     */
     @Override
     public void addTerms(List<Term> terms) {
         List<Term> existingTerms = getAllTerms();

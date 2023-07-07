@@ -18,6 +18,11 @@ public class StorageUtils {
         }
     }
 
+    /**
+     * Creates a file at the specified file path if it does not already exist.
+     *
+     * @param filePath the path of the file to create
+     */
     public static void createFileIfNotExists(String filePath) {
         File file = new File(filePath);
         if (!file.isFile()) {

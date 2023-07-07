@@ -9,6 +9,11 @@ public class Term implements Comparable<Term> {
     private String term;
     private int weight;
 
+    /**
+     * Constructs a Term object with the specified term string and default weight of 0.
+     *
+     * @param term the term string
+     */
     public Term(String term) {
         this.term = term;
         this.weight = 0;
@@ -88,6 +93,14 @@ public class Term implements Comparable<Term> {
         return Objects.hash(term);
     }
 
+    /**
+     * Compares this Term object with the specified Term object for order.
+     * The comparison is based on the weight of the terms.
+     * If the weights are equal, the terms are compared lexicographically.
+     *
+     * @param o the Term object to be compared
+     * @return a negative integer, zero, or a positive integer as this Term is less than, equal to, or greater than the specified Term
+     */
     @Override
     public int compareTo(Term o) {
         if(this.weight == o.weight) {

@@ -14,6 +14,11 @@ public interface ArticleStorage {
      */
     void addArticle(Article article);
 
+    /**
+     * Adds a list of articles to the storage.
+     *
+     * @param articles the articles to add
+     */
     void addArticles(List<Article> articles);
     /**
      * Removes an article from the storage.

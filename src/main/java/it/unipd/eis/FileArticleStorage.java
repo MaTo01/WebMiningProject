@@ -42,6 +42,15 @@ public class FileArticleStorage implements ArticleStorage {
         saveArticles(existingArticles);
     }
 
+    /**
+     * Adds a list of articles to the system.
+     * Each article is assigned a unique ID generated using UUID.randomUUID().
+     * If there are existing saved articles, the new articles are added to the existing list.
+     * If there are no saved articles, a new list is created.
+     * Finally, the list of articles is added to the storage file.
+     *
+     * @param articles the list of articles to add
+     */
     @Override
     public void addArticles(List<Article> articles) {
         for(Article a : articles) {
