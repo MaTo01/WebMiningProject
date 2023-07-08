@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class TheGuardianAPISource extends Source {
     private static String apiKey;
-    private final String apiKeyFilePath = "Storage/TheGuardianAPIKey.txt";
+    private static final String apiKeyFilePath = "Storage/TheGuardianAPIKey.txt";
     private static final int pageSize = 200;
     private static final int numArticles = 1000;
 
@@ -19,7 +19,7 @@ public class TheGuardianAPISource extends Source {
     }
 
     public void downloadArticles() {
-        downloadArticles("");
+        throw new UnsupportedOperationException();
     }
 
     @Override
