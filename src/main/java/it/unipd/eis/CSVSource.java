@@ -7,11 +7,23 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Source used to read and serialize articles from CSV files.
+ */
 public class CSVSource extends Source {
     private final String fileName;
+
+    /**
+     * Constructs a CSVSource for the specified file in the Sources/CSV directory
+     * @param file the name of the CSV file
+     */
     public CSVSource(String file) {
         fileName = "Sources/CSV/" + file;
     }
+
+    /**
+     * Reads all articles from the CSV file
+     */
     @Override
     public void downloadArticles() {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
@@ -33,6 +45,10 @@ public class CSVSource extends Source {
         }
     }
 
+    /**
+     * Dummy method
+     * @param query dummy parameter
+     */
     public void downloadArticles(String query) {
         downloadArticles();
     }
