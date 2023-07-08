@@ -19,7 +19,7 @@ public class App
 
                 if(!query.equals("")) {
                     TheGuardianAPISource theGuardianSource = new TheGuardianAPISource();
-                    CSVSource csvSource = new CSVSource();
+                    CSVSource csvSource = new CSVSource("nytimes_articles_v2.csv");
 
                     Source.clearStorage();
                     theGuardianSource.downloadArticles(query);

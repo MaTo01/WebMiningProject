@@ -8,10 +8,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class CSVSource extends Source {
-    public CSVSource() { }
+    private final String fileName;
+    public CSVSource(String file) {
+        fileName = "Sources/CSV/" + file;
+    }
     @Override
     public void downloadArticles() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("Sources/CSV/nytimes_articles_v2.csv"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             Iterable<CSVRecord> records = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader);
 
             for (CSVRecord record : records) {
