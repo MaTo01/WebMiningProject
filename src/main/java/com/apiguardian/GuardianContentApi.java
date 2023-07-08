@@ -8,6 +8,8 @@ import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.mashape.unirest.request.HttpRequest;
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClients;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -87,6 +89,10 @@ public class GuardianContentApi {
   }
 
   public Response getContent(String query) throws UnirestException {
+    HttpClient httpClient = HttpClients.custom()
+            .disableCookieManagement()
+            .build();
+    Unirest.setHttpClient(httpClient);
 
     HttpRequest request = Unirest.get(TARGET_URL)
             .queryString("api-key", apiKey)
