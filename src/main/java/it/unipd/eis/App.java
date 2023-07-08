@@ -6,19 +6,24 @@ public class App
 {
     public static void main(String[] args) {
         Options options = new Options();
-        options.addOption("d", true, "Download articles based on a key word/phrase");
-        options.addOption("e", false, "Extract the terms with the highest weight");
+        options.addOption("d", true, "Download articles from the supported sources based on a key word/phrase.");
+        options.addOption("e", false, "Extract the terms with the highest weight and save them in a text file.");
+        options.addOption("h", false, "Display this help menu.");
 
-        CommandLineParser parser = new DefaultParser();
-        CommandLine cmd = null;
         try {
-            cmd = parser.parse(options, args);
+            CommandLineParser parser = new DefaultParser();
+            CommandLine cmd = parser.parse(options, args);
 
+            if(cmd.hasOption("h")) {
+                HelpFormatter formatter = new HelpFormatter();
+                formatter.printHelp("cmd", options);
+            }
             if(cmd.hasOption("d")) {
                 String query = cmd.getOptionValue("d");
 
                 if(!query.equals("")) {
                     TheGuardianAPISource theGuardianSource = new TheGuardianAPISource();
+                    theGuardianSource.setNumArticles(1000);
                     CSVSource csvSource = new CSVSource("nytimes_articles_v2.csv");
 
                     Source.clearStorage();
