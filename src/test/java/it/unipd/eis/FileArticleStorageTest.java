@@ -28,6 +28,25 @@ public class FileArticleStorageTest {
     }
 
     @Test
+    public void testAddArticles() {
+        Article article1 = new Article("Title 1", "Body text 1");
+        Article article2 = new Article("Title 2", "Body text 2");
+        Article article3 = new Article("Title 3", "Body text 3");
+
+        ArrayList<Article> articles = new ArrayList<>();
+        articles.add(article1);
+        articles.add(article2);
+        articles.add(article3);
+
+        articleStorage.addArticles(articles);
+
+        assertEquals(3, articleStorage.getArticleCount());
+        assertTrue(articleStorage.containsArticle(article1));
+        assertTrue(articleStorage.containsArticle(article2));
+        assertTrue(articleStorage.containsArticle(article3));
+    }
+
+    @Test
     public void testRemoveArticle() {
         Article article = new Article("Title 1", "Body text 1");
         articleStorage.addArticle(article);
@@ -45,7 +64,7 @@ public class FileArticleStorageTest {
         articleStorage.addArticle(article1);
         articleStorage.addArticle(article2);
 
-        List<Article> articles = articleStorage.getAllArticles();
+        ArrayList<Article> articles = articleStorage.getAllArticles();
         assertEquals(2, articles.size());
         assertTrue(articles.contains(article1));
         assertTrue(articles.contains(article2));
