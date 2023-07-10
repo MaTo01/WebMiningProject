@@ -105,6 +105,18 @@ public class FileTermStorageTest {
     }
 
     @Test
+    void testIsEmpty() {
+        assertTrue(termStorage.isEmpty());
+
+        Term term1 = new Term("zio", 5);
+        Term term2 = new Term("pera", 3);
+        termStorage.addTerm(term1);
+        termStorage.addTerm(term2);
+
+        assertFalse(termStorage.isEmpty());
+    }
+
+    @Test
     void testClearStorage() {
         Term term1 = new Term("zio", 5);
         Term term2 = new Term("pera", 3);
@@ -118,19 +130,4 @@ public class FileTermStorageTest {
 
         assertTrue(termStorage.isEmpty());
     }
-
-    @Test
-    void testIsEmpty() {
-        assertTrue(termStorage.isEmpty());
-
-        Term term1 = new Term("zio", 5);
-        Term term2 = new Term("pera", 3);
-        termStorage.addTerm(term1);
-        termStorage.addTerm(term2);
-
-        assertFalse(termStorage.isEmpty());
-    }
-
-
-
 }

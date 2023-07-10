@@ -89,16 +89,6 @@ public class FileArticleStorageTest {
     }
 
     @Test
-    public void testClearStorage() {
-        Article article1 = new Article("Title 1", "Body text 1");
-        articleStorage.addArticle(article1);
-        assertFalse(articleStorage.isEmpty());
-
-        articleStorage.clearStorage();
-        assertTrue(articleStorage.isEmpty());
-    }
-
-    @Test
     public void testIsEmpty() {
         assertTrue(articleStorage.isEmpty());
 
@@ -107,5 +97,15 @@ public class FileArticleStorageTest {
         articleStorage.addArticle(article1);
         articleStorage.addArticle(article2);
         assertFalse(articleStorage.isEmpty());
+    }
+
+    @Test
+    public void testClearStorage() {
+        Article article1 = new Article("Title 1", "Body text 1");
+        articleStorage.addArticle(article1);
+        assertFalse(articleStorage.isEmpty());
+
+        articleStorage.clearStorage();
+        assertTrue(articleStorage.isEmpty());
     }
 }
