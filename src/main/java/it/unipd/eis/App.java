@@ -45,7 +45,9 @@ public class App
             if(cmd.hasOption("e")) {
                 TermExtractor extractor = new TermExtractor(numTermsToSave);
                 extractor.setArticleStorage(new FileArticleStorage(fileArticleStoragePath));
-                extractor.setTermStorage(new FileTermStorage(fileTermStoragePath));
+                FileTermStorage termStorage = new FileTermStorage(fileTermStoragePath);
+                termStorage.clearStorage();
+                extractor.setTermStorage(termStorage);
 
                 System.out.println("Starting extraction of top terms.");
                 extractor.extractTerms();
