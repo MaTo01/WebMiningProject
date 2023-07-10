@@ -43,13 +43,19 @@ public class App
                 }
             }
             if(cmd.hasOption("e")) {
-                TermExtractor extractor = new TermExtractor(numTermsToSave);
-                extractor.setArticleStorage(new FileArticleStorage(fileArticleStoragePath));
+                File articlesFile = new File(fileArticleStoragePath + "/articles.json");
+                if (!articlesFile.exists()) {
+                    throw new IllegalStateException("Uninitialized or invalid storage(s).");
+                }
+
+                FileArticleStorage articleStorage = new FileArticleStorage(fileArticleStoragePath);
                 FileTermStorage termStorage = new FileTermStorage(fileTermStoragePath);
-                termStorage.clearStorage();
+                TermExtractor extractor = new TermExtractor(numTermsToSave);
+                extractor.setArticleStorage(articleStorage);
                 extractor.setTermStorage(termStorage);
 
                 System.out.println("Starting extraction of top terms.");
+                termStorage.clearStorage();
                 extractor.extractTerms();
 
                 System.out.println("Extraction of top terms complete. See terms.txt file for results.");
