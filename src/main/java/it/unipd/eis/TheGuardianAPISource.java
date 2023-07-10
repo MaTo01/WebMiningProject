@@ -63,7 +63,7 @@ public class TheGuardianAPISource extends Source {
                 com.apiguardian.bean.Response response = guardianApi.getContent(query);
 
                 if(response.getStatus().equals("ok")) {
-                    int left = numArticles - (i * pageSize);
+                    int left = numArticles - ((i - 1) * pageSize);
                     com.apiguardian.bean.Article[] responseArticles = response.getResults();
 
                     for (int j = 0; j < responseArticles.length && j < left; j++) {
