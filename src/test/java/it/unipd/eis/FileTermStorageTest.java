@@ -23,7 +23,7 @@ public class FileTermStorageTest {
         termStorage.addTerm(term1);
         termStorage.addTerm(term2);
 
-        List<Term> terms = termStorage.getAllTerms();
+        ArrayList<Term> terms = termStorage.getAllTerms();
         assertEquals(2, terms.size());
         assertTrue(terms.contains(term1));
         assertTrue(terms.contains(term2));
@@ -55,7 +55,7 @@ public class FileTermStorageTest {
 
         termStorage.removeTerm(term1);
 
-        List<Term> terms = termStorage.getAllTerms();
+        ArrayList<Term> terms = termStorage.getAllTerms();
         assertEquals(1, terms.size());
         assertFalse(terms.contains(term1));
         assertTrue(terms.contains(term2));
@@ -75,8 +75,22 @@ public class FileTermStorageTest {
         List<Term> topTerms = termStorage.getTopTermsByWeight(count);
 
         assertEquals(count, topTerms.size());
-        assertEquals(term3, topTerms.get(0)); // Highest weight
-        assertEquals(term1, topTerms.get(1)); // Second-highest weight
+        assertEquals(term3, topTerms.get(0));
+        assertEquals(term1, topTerms.get(1));
+    }
+
+    @Test
+    void testGetAllTerms() {
+        Term term1 = new Term("zio", 5);
+        Term term2 = new Term("pera", 3);
+
+        termStorage.addTerm(term1);
+        termStorage.addTerm(term2);
+
+        ArrayList<Term> terms = termStorage.getAllTerms();
+        assertEquals(2, terms.size());
+        assertTrue(terms.contains(term1));
+        assertTrue(terms.contains(term2));
     }
 
     @Test

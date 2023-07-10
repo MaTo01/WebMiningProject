@@ -1,6 +1,5 @@
 package it.unipd.eis;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 import org.junit.jupiter.api.*;
@@ -61,7 +60,7 @@ public class FileArticleStorageTest {
         articleStorage.addArticle(article1);
         articleStorage.addArticle(article2);
 
-        List<Article> articles = articleStorage.getAllArticles();
+        ArrayList<Article> articles = articleStorage.getAllArticles();
         assertEquals(2, articles.size());
         assertTrue(articles.contains(article1));
         assertTrue(articles.contains(article2));
