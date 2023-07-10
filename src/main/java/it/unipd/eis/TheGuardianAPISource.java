@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class TheGuardianAPISource extends Source {
     private String apiKey;
-    private String apiKeyFilePath = "Storage/TheGuardianAPIKey.txt";
+    private String apiKeyFilePath = "Sources/TheGuardianAPIKey.txt";
     private static final int pageSize = 200;
     private int numArticles = 1000;
 
@@ -54,6 +54,10 @@ public class TheGuardianAPISource extends Source {
      */
     @Override
     public void downloadArticles(String query) {
+        if(storage == null) {
+            throw new IllegalStateException("Uninitialized or invalid storage.");
+        }
+
         GuardianContentApi guardianApi = new GuardianContentApi(apiKey);
         guardianApi.setPageSize(pageSize);
 

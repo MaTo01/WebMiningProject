@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 public abstract class Source {
     protected ArrayList<Article> articles;
-    private static ArticleStorage storage;
+    protected static ArticleStorage storage;
 
     public Source() {
         articles = new ArrayList<>();
@@ -37,6 +37,8 @@ public abstract class Source {
      * Clears all the stored articles.
      */
     public static void clearStorage() {
-        storage.clearStorage();
+        if(storage != null) {
+            storage.clearStorage();
+        }
     }
 }

@@ -26,6 +26,10 @@ public class CSVSource extends Source {
      */
     @Override
     public void downloadArticles() {
+        if(storage == null) {
+            throw new IllegalStateException("Uninitialized or invalid storage.");
+        }
+
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             Iterable<CSVRecord> records = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader);
 
