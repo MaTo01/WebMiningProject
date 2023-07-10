@@ -1,5 +1,6 @@
 package it.unipd.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,14 +28,14 @@ public interface TermStorage {
      * @param count the number of terms to retrieve
      * @return a list of terms, sorted in descending order by weight
      */
-    List<Term> getTopTermsByWeight(int count);
+    ArrayList<Term> getTopTermsByWeight(int count);
 
     /**
      * Retrieves all the terms stored in the storage.
      *
      * @return a list of all the terms in the storage
      */
-    List<Term> getAllTerms();
+    ArrayList<Term> getAllTerms();
 
     /**
      * Retrieves the number of terms stored in the storage.

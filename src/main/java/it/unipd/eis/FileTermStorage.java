@@ -68,10 +68,10 @@ public class FileTermStorage implements TermStorage {
      * @return a list of terms, sorted in descending order by weight
      */
     @Override
-    public List<Term> getTopTermsByWeight(int count) {
-        List<Term> terms = getAllTerms();
-        return terms.stream()
-                .sorted(Comparator.comparingInt(Term::getWeight).reversed())
+    public ArrayList<Term> getTopTermsByWeight(int count) {
+        ArrayList<Term> terms = getAllTerms();
+        Collections.sort(terms);
+        return (ArrayList<Term>) terms.stream()
                 .limit(count)
                 .collect(Collectors.toList());
     }
@@ -82,8 +82,8 @@ public class FileTermStorage implements TermStorage {
      * @return a list of all the terms in the storage
      */
     @Override
-    public List<Term> getAllTerms() {
-        List<Term> terms = new ArrayList<>();
+    public ArrayList<Term> getAllTerms() {
+        ArrayList<Term> terms = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
