@@ -30,6 +30,22 @@ public class FileTermStorageTest {
     }
 
     @Test
+    void testAddTerms() {
+        Term term1 = new Term("zio", 5);
+        Term term2 = new Term("pera", 3);
+        ArrayList<Term> terms = new ArrayList<>();
+        terms.add(term1);
+        terms.add(term2);
+
+        termStorage.addTerms(terms);
+
+        List<Term> termsTest = termStorage.getAllTerms();
+        assertEquals(2, termsTest.size());
+        assertTrue(termsTest.contains(term1));
+        assertTrue(termsTest.contains(term2));
+    }
+
+    @Test
     void testRemoveTerm() {
         Term term1 = new Term("zio", 5);
         Term term2 = new Term("pera", 3);

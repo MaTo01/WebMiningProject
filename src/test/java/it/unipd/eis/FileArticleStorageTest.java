@@ -1,12 +1,13 @@
 package it.unipd.eis;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FileArticleStorageTest {
-    private static final String FILE_PATH = "./Storage";
+    private static final String FILE_PATH = "./Storage/Test";
     private ArticleStorage articleStorage;
 
     @BeforeEach
@@ -25,6 +26,21 @@ public class FileArticleStorageTest {
         assertEquals(2, articleStorage.getArticleCount());
         assertTrue(articleStorage.containsArticle(article1));
         assertTrue(articleStorage.containsArticle(article2));
+    }
+
+    @Test
+    public void testAddArticles() {
+        Article article1 = new Article("Title 1", "Body text 1");
+        Article article2 = new Article("Title 2", "Body text 2");
+        ArrayList<Article> articles = new ArrayList<>();
+        articles.add(article1);
+        articles.add(article2);
+        articleStorage.addArticles(articles);
+
+        List<Article> articlesTest = articleStorage.getAllArticles();
+        assertEquals(2, articlesTest.size());
+        assertTrue(articlesTest.contains(article1));
+        assertTrue(articlesTest.contains(article2));
     }
 
     @Test
