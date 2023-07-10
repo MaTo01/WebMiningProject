@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class TermExtractor {
-    private TermStorage termStorage = new FileTermStorage("Storage");
-    private ArticleStorage articleStorage = new FileArticleStorage("Storage");
+    private TermStorage termStorage;
+    private ArticleStorage articleStorage;
     private final int numTermsToSave;
     private static final ArrayList<String> stopList = getStopList();
 
@@ -25,6 +25,9 @@ public class TermExtractor {
     }
 
     public void extractTerms() {
+        if(articleStorage == null || termStorage == null) {
+            throw new IllegalStateException("Uninitialized or invalid storage(s).");
+        }
         ArrayList<Article> articles = articleStorage.getAllArticles();
         if(articles == null || articles.size() == 0) {
             throw new IllegalStateException("Error retrieving articles (articles.json file may be missing or empty).");
