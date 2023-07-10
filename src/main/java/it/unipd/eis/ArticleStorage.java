@@ -1,5 +1,6 @@
 package it.unipd.eis;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,7 +33,7 @@ public interface ArticleStorage {
      *
      * @return a list of all articles
      */
-    List<Article> getAllArticles();
+    ArrayList<Article> getAllArticles();
 
     /**
      * Retrieves the number of articles in the storage.
