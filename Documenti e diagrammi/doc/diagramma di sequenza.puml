@@ -1,0 +1,52 @@
+@startuml
+actor User
+
+activate App
+User -> App: Seleziona azione
+alt download ed estrazione
+alt download
+App -> TheGuardianAPISource: downloadArticles(query)
+activate TheGuardianAPISource
+TheGuardianAPISource -> GuardianContentAPI: getContent(query)
+activate GuardianContentAPI
+GuardianContentAPI --> TheGuardianAPISource: response
+deactivate GuardianContentAPI
+TheGuardianAPISource -> TheGuardianAPISource: serializeArticles()
+TheGuardianAPISource -> FileArticleStorage: addArticles(articles)
+deactivate TheGuardianAPISource
+activate FileArticleStorage
+FileArticleStorage -> FileArticleStorage: getAllArticles()
+FileArticleStorage -> FileArticleStorage: saveArticles()
+FileArticleStorage --> App: download da API terminato
+deactivate FileArticleStorage
+App -> CSVSource: downloadArticles()
+activate CSVSource
+CSVSource -> CSVSource: serializeArticles()
+CSVSource -> FileArticleStorage: addArticles(articles)
+deactivate CSVSource
+activate FileArticleStorage
+FileArticleStorage -> FileArticleStorage: getAllArticles()
+FileArticleStorage -> FileArticleStorage: saveArticles()
+FileArticleStorage --> App: download da CSV terminato
+deactivate FileArticleStorage
+App --> User: Download completato
+end
+alt estrazione
+App -> TermExtractor: extractTerms()
+activate TermExtractor
+TermExtractor -> FileArticleStorage: getAllArticles()
+activate FileArticleStorage
+FileArticleStorage --> TermExtractor: articles
+deactivate FileArticleStorage
+TermExtractor->FileTermStorage: addTerms()
+deactivate TermExtractor
+activate FileTermStorage
+FileTermStorage -> FileTermStorage: getAllTerms()
+FileTermStorage -> FileTermStorage: saveTerms()
+FileTermStorage --> App: termini immagazzinati
+deactivate FileTermStorage
+App --> User: Estrazione completata
+deactivate App
+end
+end
+@enduml
