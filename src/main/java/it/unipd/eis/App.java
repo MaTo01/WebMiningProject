@@ -39,7 +39,7 @@ public class App
 
                     System.out.println("Download and serialization of articles complete.");
                 } else {
-                    throw new IllegalArgumentException();
+                    throw new IllegalArgumentException("Query string cannot be empty.");
                 }
             }
             if(cmd.hasOption("e")) {
@@ -52,7 +52,7 @@ public class App
 
                 System.out.println("Extraction of top terms complete. See terms.txt file for results.");
             }
-        } catch(ParseException | IllegalArgumentException e) {
+        } catch(ParseException e) {
             e.printStackTrace();
         }
     }

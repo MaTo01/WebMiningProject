@@ -27,7 +27,7 @@ public class TermExtractor {
     public void extractTerms() {
         ArrayList<Article> articles = articleStorage.getAllArticles();
         if(articles == null || articles.size() == 0) {
-            throw new UnsupportedOperationException();
+            throw new IllegalStateException("Error retrieving articles (articles.json file may be missing or empty).");
         }
 
         ArrayList<Term> terms = new ArrayList<>();

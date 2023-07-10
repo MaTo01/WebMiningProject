@@ -73,7 +73,7 @@ public class TheGuardianAPISource extends Source {
                         ));
                     }
                 } else {
-                    throw new HttpResponseException(400, "Download request failed");
+                    throw new HttpResponseException(400, "Download request failed.");
                 }
             }
 
