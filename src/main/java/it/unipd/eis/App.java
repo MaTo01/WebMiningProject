@@ -22,10 +22,12 @@ public class App
                 String query = cmd.getOptionValue("d");
 
                 if(!query.equals("")) {
+                    Source.setStorage(new FileArticleStorage("Storage"));
                     TheGuardianAPISource theGuardianSource = new TheGuardianAPISource();
                     theGuardianSource.setNumArticles(1000);
                     CSVSource csvSource = new CSVSource("nytimes_articles_v2.csv");
 
+                    System.out.println("Starting download using search term(s) \"" + query + "\".");
                     Source.clearStorage();
                     theGuardianSource.downloadArticles(query);
                     csvSource.downloadArticles();
@@ -36,10 +38,14 @@ public class App
                 }
             }
             if(cmd.hasOption("e")) {
-                TermExtractor extractor = new TermExtractor();
+                TermExtractor extractor = new TermExtractor(50);
+                extractor.setArticleStorage(new FileArticleStorage("Storage"));
+                extractor.setTermStorage(new FileTermStorage("Storage"));
+
+                System.out.println("Starting extraction of top terms.");
                 extractor.extractTerms();
 
-                System.out.println("Extraction of top terms complete.");
+                System.out.println("Extraction of top terms complete. See terms.txt file for results.");
             }
         } catch(ParseException | IllegalArgumentException e) {
             e.printStackTrace();
