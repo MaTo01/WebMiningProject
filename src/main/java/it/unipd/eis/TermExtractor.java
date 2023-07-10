@@ -25,9 +25,6 @@ public class TermExtractor {
     }
 
     public void extractTerms() {
-        if(articleStorage == null || termStorage == null) {
-            throw new IllegalStateException("Uninitialized or invalid storage(s).");
-        }
         ArrayList<Article> articles = articleStorage.getAllArticles();
         if(articles == null || articles.size() == 0) {
             throw new IllegalStateException("Error retrieving articles (articles.json file may be missing or empty).");
