@@ -6,7 +6,7 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FileTermStorageTest {
-    private static final String FILE_PATH = "./Storage";
+    private static final String FILE_PATH = "./Storage/Test";
     private TermStorage termStorage;
 
     @BeforeEach

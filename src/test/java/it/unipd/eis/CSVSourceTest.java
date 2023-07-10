@@ -14,11 +14,11 @@ public class CSVSourceTest {
     public void setup() {
         CSVSource.setStorage(articleStorage);
         source = new CSVSource(sourceName);
+        CSVSource.clearStorage();
     }
 
     @Test
     public void testDownloadArticles() {
-        CSVSource.clearStorage();
         source.downloadArticles();
 
         assertEquals(1000, articleStorage.getArticleCount());

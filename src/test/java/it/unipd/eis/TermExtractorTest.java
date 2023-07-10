@@ -17,11 +17,11 @@ public class TermExtractorTest {
         extractor = new TermExtractor(numTermsTest);
         extractor.setArticleStorage(articleStorage);
         extractor.setTermStorage(termStorage);
+        termStorage.clearStorage();
     }
 
     @Test
     public void testExtractTerms() {
-        termStorage.clearStorage();
         Article article1 = new Article("Test 1", "The quick brown fox jumps over the lazy dog");
         Article article2 = new Article("Test 2", "Now is the time for all good men to come to the aid of the party");
         articleStorage.addArticle(article1);
