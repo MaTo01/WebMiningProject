@@ -3,14 +3,18 @@ package it.unipd.eis;
 import java.util.ArrayList;
 
 /**
- * Abstract class representing different types of sources.
+ * Abstract class representing different types of article sources.
  */
 public abstract class Source {
     protected ArrayList<Article> articles;
-    private final static ArticleStorage storage = new FileArticleStorage("Storage");
+    private static ArticleStorage storage;
 
     public Source() {
         articles = new ArrayList<>();
+    }
+
+    public static void setStorage(ArticleStorage as) {
+        storage = as;
     }
 
     /**
