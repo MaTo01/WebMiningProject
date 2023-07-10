@@ -26,8 +26,11 @@ public class TermExtractor {
 
     public void extractTerms() {
         ArrayList<Article> articles = articleStorage.getAllArticles();
-        ArrayList<Term> terms = new ArrayList<>();
+        if(articles == null || articles.size() == 0) {
+            throw new UnsupportedOperationException();
+        }
 
+        ArrayList<Term> terms = new ArrayList<>();
         for(Article a : articles) {
             String[] title = splitAndReformat(a.getTitle());
             String[] body = splitAndReformat(a.getBody());
@@ -43,7 +46,7 @@ public class TermExtractor {
         Collections.sort(terms);
 
         ArrayList<Term> topTerms = new ArrayList<>();
-        for(int i = 0; i < numTermsToSave; i++) {
+        for(int i = 0; i < numTermsToSave && i < terms.size(); i++) {
             topTerms.add(terms.get(i));
         }
         termStorage.addTerms(topTerms);
