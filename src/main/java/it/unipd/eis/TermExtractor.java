@@ -7,13 +7,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class TermExtractor {
-    private static FileTermStorage termStorage = new FileTermStorage("Storage");
-    private static FileArticleStorage articleStorage = new FileArticleStorage("Storage");
-    private static final int numTermsToSave = 50;
+    private TermStorage termStorage = new FileTermStorage("Storage");
+    private ArticleStorage articleStorage = new FileArticleStorage("Storage");
+    private final int numTermsToSave;
     private static final ArrayList<String> stopList = getStopList();
 
-    public TermExtractor() {
-        termStorage.clearStorage();
+    public TermExtractor(int num) {
+        numTermsToSave = num;
+    }
+
+    public void setArticleStorage(ArticleStorage articleStorage) {
+        this.articleStorage = articleStorage;
+    }
+
+    public void setTermStorage(TermStorage termStorage) {
+        this.termStorage = termStorage;
     }
 
     public void extractTerms() {
@@ -41,20 +49,6 @@ public class TermExtractor {
         termStorage.addTerms(topTerms);
     }
 
-    private static ArrayList<String> getStopList() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("Sources/stopList.txt"))) {
-            String line;
-            ArrayList<String> list = new ArrayList<>();
-            while((line = reader.readLine()) != null) {
-                list.add(line);
-            }
-            return list;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     private void countTerm(ArrayList<Term> terms, String t) {
         if(!t.equals("") && !stopList.contains(t.toLowerCase())) {
             Term aux = new Term(t);
@@ -71,5 +65,19 @@ public class TermExtractor {
     private String[] splitAndReformat(String s) {
         s = s.replaceAll("[^a-zA-Z0-9\\s]", " ");
         return s.split(" ");
+    }
+
+    private static ArrayList<String> getStopList() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("Sources/stopList.txt"))) {
+            String line;
+            ArrayList<String> list = new ArrayList<>();
+            while((line = reader.readLine()) != null) {
+                list.add(line);
+            }
+            return list;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new ArrayList<>();
     }
 }
