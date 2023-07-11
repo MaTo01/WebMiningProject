@@ -3,6 +3,9 @@ package it.unipd.eis;
 import java.io.File;
 import org.apache.commons.cli.*;
 
+/**
+ * Main class for the application.
+ */
 public class App 
 {
     private static final String FILE_ARTICLE_STORAGE_PATH = "Storage";
@@ -10,6 +13,11 @@ public class App
     private static final int NUM_ARTICLES_TO_DOWNLOAD = 1000;
     private static final int MAX_TERMS_TO_SAVE = 50;
 
+    /**
+     * Entry point of the application.
+     *
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         Options options = new Options();
         options.addOption("d", true, "Download articles from the supported sources based on a key word/phrase.");
@@ -28,10 +36,13 @@ public class App
                 String query = cmd.getOptionValue("d");
 
                 if(!query.equals("")) {
+                    // Set article storage and sources
                     Source.setArticleStorage(new FileArticleStorage(FILE_ARTICLE_STORAGE_PATH));
                     TheGuardianAPISource theGuardianSource = new TheGuardianAPISource();
                     theGuardianSource.setNumArticles(NUM_ARTICLES_TO_DOWNLOAD);
                     CSVSource csvSource = new CSVSource("nytimes_articles_v2.csv");
+
+                    // Clear article storage
                     Source.clearStorage();
 
                     System.out.println("Starting download using search term(s) \"" + query + "\".");
@@ -44,16 +55,20 @@ public class App
                 }
             }
             if(cmd.hasOption("e")) {
+                // Check if articles.json file exists
                 File articlesFile = new File(FILE_ARTICLE_STORAGE_PATH + "/articles.json");
                 if (!articlesFile.exists()) {
                     throw new IllegalStateException("Uninitialized or invalid storage(s).");
                 }
 
+                // Set article and term storage, and create extractor
                 FileArticleStorage articleStorage = new FileArticleStorage(FILE_ARTICLE_STORAGE_PATH);
                 FileTermStorage termStorage = new FileTermStorage(FILE_TERM_STORAGE_PATH);
                 TermExtractor extractor = new TermExtractor(MAX_TERMS_TO_SAVE);
                 extractor.setArticleStorage(articleStorage);
                 extractor.setTermStorage(termStorage);
+
+                // Clear term storage
                 termStorage.clearStorage();
 
                 System.out.println("Starting extraction of top terms.");
