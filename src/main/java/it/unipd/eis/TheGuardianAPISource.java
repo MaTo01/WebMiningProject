@@ -22,7 +22,7 @@ public class TheGuardianAPISource extends Source {
      */
     public TheGuardianAPISource() {
         API_KEY_FILE_PATH = "Sources/TheGuardianAPIKey.txt";
-        getApiKey();
+        loadApiKey();
     }
 
     /**
@@ -31,7 +31,7 @@ public class TheGuardianAPISource extends Source {
      */
     public TheGuardianAPISource(String keyPath) {
         API_KEY_FILE_PATH = keyPath;
-        getApiKey();
+        loadApiKey();
     }
 
     /**
@@ -91,7 +91,7 @@ public class TheGuardianAPISource extends Source {
     /**
      * Loads the API key from the previously specified file.
      */
-    private void getApiKey() {
+    private void loadApiKey() {
         try (BufferedReader reader = new BufferedReader(new FileReader(API_KEY_FILE_PATH))) {
             apiKey = reader.readLine();
         } catch (IOException e) {
