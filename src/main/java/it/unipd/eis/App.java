@@ -8,6 +8,7 @@ import org.apache.commons.cli.*;
  */
 public class App 
 {
+    private static final String FILE_ARTICLE_SOURCE_PATH = "Sources";
     private static final String FILE_ARTICLE_STORAGE_PATH = "Storage";
     private static final String FILE_TERM_STORAGE_PATH = "Storage";
     private static final int NUM_ARTICLES_TO_DOWNLOAD = 1000;
@@ -36,6 +37,24 @@ public class App
                 String query = cmd.getOptionValue("d");
 
                 if(!query.equals("")) {
+                    // Check if the "Sources" directory exists
+                    File sourcesDirectory = new File(FILE_ARTICLE_SOURCE_PATH);
+                    if (!sourcesDirectory.isDirectory()) {
+                        throw new IllegalStateException("Sources directory not found.");
+                    }
+
+                    // Check if the APIKey exists
+                    File apiKeyFile = new File(FILE_ARTICLE_SOURCE_PATH + "/TheGuardianAPIKey.txt");
+                    if (!apiKeyFile.isFile()) {
+                        throw new IllegalStateException("APIKey not found.");
+                    }
+
+                    // Check if the "CSV" directory exists
+                    File csvDirectory = new File(FILE_ARTICLE_SOURCE_PATH + "/CSV");
+                    if (!csvDirectory.isDirectory()) {
+                        throw new IllegalStateException("CSV directory not found.");
+                    }
+                    
                     // Set article storage and sources
                     Source.setArticleStorage(new FileArticleStorage(FILE_ARTICLE_STORAGE_PATH));
                     TheGuardianAPISource theGuardianSource = new TheGuardianAPISource();
