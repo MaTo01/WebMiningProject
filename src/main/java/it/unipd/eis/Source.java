@@ -7,14 +7,14 @@ import java.util.ArrayList;
  */
 public abstract class Source {
     protected ArrayList<Article> articles;
-    protected static ArticleStorage storage;
+    protected static ArticleStorage articleStorage;
 
     public Source() {
         articles = new ArrayList<>();
     }
 
-    public static void setStorage(ArticleStorage as) {
-        storage = as;
+    public static void setArticleStorage(ArticleStorage as) {
+        articleStorage = as;
     }
 
     /**
@@ -30,15 +30,15 @@ public abstract class Source {
      * Serializes the downloaded articles.
      */
     protected void serializeArticles() {
-        storage.addArticles(articles);
+        articleStorage.addArticles(articles);
     }
 
     /**
      * Clears all the stored articles.
      */
     public static void clearStorage() {
-        if(storage != null) {
-            storage.clearStorage();
+        if(articleStorage != null) {
+            articleStorage.clearStorage();
         }
     }
 }

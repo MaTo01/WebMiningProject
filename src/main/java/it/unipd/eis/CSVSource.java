@@ -11,14 +11,14 @@ import java.io.IOException;
  * Source used to read and serialize articles from CSV files.
  */
 public class CSVSource extends Source {
-    private final String fileName;
+    private final String FILE_NAME;
 
     /**
      * Constructs a CSVSource for the specified file in the Sources/CSV directory
      * @param file the name of the CSV file
      */
     public CSVSource(String file) {
-        fileName = "Sources/CSV/" + file;
+        FILE_NAME = "Sources/CSV/" + file;
     }
 
     /**
@@ -26,11 +26,11 @@ public class CSVSource extends Source {
      */
     @Override
     public void downloadArticles() {
-        if(storage == null) {
+        if(articleStorage == null) {
             throw new IllegalStateException("Uninitialized or invalid storage.");
         }
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
             Iterable<CSVRecord> records = CSVFormat.RFC4180.withFirstRecordAsHeader().parse(reader);
 
             for (CSVRecord record : records) {

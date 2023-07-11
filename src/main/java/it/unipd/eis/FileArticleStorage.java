@@ -12,7 +12,7 @@ import com.google.gson.reflect.TypeToken;
  * in a file-based storage system.
  */
 public class FileArticleStorage implements ArticleStorage {
-    private final String filePath;
+    private final String FILE_PATH;
 
     /**
      * Constructs a new instance of {@code FileArticleStorage} with the specified file path.
@@ -21,8 +21,8 @@ public class FileArticleStorage implements ArticleStorage {
      */
     public FileArticleStorage(String dirPath) {
         StorageUtils.createDirectoryIfNotExists(dirPath);
-        this.filePath = dirPath + "/articles.json";
-        StorageUtils.createFileIfNotExists(filePath);
+        this.FILE_PATH = dirPath + "/articles.json";
+        StorageUtils.createFileIfNotExists(FILE_PATH);
     }
 
     /**
@@ -83,7 +83,7 @@ public class FileArticleStorage implements ArticleStorage {
      */
     @Override
     public ArrayList<Article> getAllArticles() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             Gson gson = new Gson();
             return gson.fromJson(reader, new TypeToken<ArrayList<Article>>() {}.getType());
         } catch (IOException e) {
@@ -138,7 +138,7 @@ public class FileArticleStorage implements ArticleStorage {
      * @param articles the list of articles to be saved
      */
     private void saveArticles(ArrayList<Article> articles) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             writer.write(gson.toJson(articles));
         } catch (IOException e) {

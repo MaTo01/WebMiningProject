@@ -6,12 +6,12 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FileTermStorageTest {
-    private static final String FILE_PATH = "./Storage/Test";
+    private static final String DIR_PATH = "./Storage/Test";
     private TermStorage termStorage;
 
     @BeforeEach
     public void setup() {
-        termStorage = new FileTermStorage(FILE_PATH);
+        termStorage = new FileTermStorage(DIR_PATH);
         termStorage.clearStorage();
     }
 

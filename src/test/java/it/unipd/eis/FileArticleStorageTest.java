@@ -6,12 +6,12 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FileArticleStorageTest {
-    private static final String FILE_PATH = "./Storage/Test";
+    private static final String DIR_PATH = "./Storage/Test";
     private ArticleStorage articleStorage;
 
     @BeforeEach
     public void setup() {
-        articleStorage = new FileArticleStorage(FILE_PATH);
+        articleStorage = new FileArticleStorage(DIR_PATH);
         articleStorage.clearStorage();
     }
 

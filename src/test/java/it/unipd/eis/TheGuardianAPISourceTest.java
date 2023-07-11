@@ -7,15 +7,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TheGuardianAPISourceTest {
     private static ArticleStorage articleStorage = new FileArticleStorage("./Storage/Test");
-    private final int numArticlesTest = 10;
-    private final String apiKeyPath = "./Sources/TheGuardianAPIKey.txt";
+    private final int NUM_ARTICLES_TO_DOWNLOAD = 10;
+    private final String API_KEY_PATH = "./Sources/TheGuardianAPIKey.txt";
     private TheGuardianAPISource source;
 
     @BeforeEach
     public void setup() {
-        TheGuardianAPISource.setStorage(articleStorage);
-        source = new TheGuardianAPISource(apiKeyPath);
-        source.setNumArticles(numArticlesTest);
+        TheGuardianAPISource.setArticleStorage(articleStorage);
+        source = new TheGuardianAPISource(API_KEY_PATH);
+        source.setNumArticles(NUM_ARTICLES_TO_DOWNLOAD);
         TheGuardianAPISource.clearStorage();
     }
 
@@ -23,6 +23,6 @@ public class TheGuardianAPISourceTest {
     public void testDownloadArticles() {
         source.downloadArticles("nuclear power");
 
-        assertEquals(numArticlesTest, articleStorage.getArticleCount());
+        assertEquals(NUM_ARTICLES_TO_DOWNLOAD, articleStorage.getArticleCount());
     }
 }

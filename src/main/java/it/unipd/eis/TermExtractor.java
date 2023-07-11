@@ -9,11 +9,11 @@ import java.util.Collections;
 public class TermExtractor {
     private TermStorage termStorage;
     private ArticleStorage articleStorage;
-    private final int numTermsToSave;
-    private static final ArrayList<String> stopList = getStopList();
+    private final int MAX_TERMS_TO_SAVE;
+    private static final ArrayList<String> STOPLIST = loadStopList();
 
     public TermExtractor(int num) {
-        numTermsToSave = num;
+        MAX_TERMS_TO_SAVE = num;
     }
 
     public void setArticleStorage(ArticleStorage articleStorage) {
@@ -46,14 +46,14 @@ public class TermExtractor {
         Collections.sort(terms);
 
         ArrayList<Term> topTerms = new ArrayList<>();
-        for(int i = 0; i < numTermsToSave && i < terms.size(); i++) {
+        for(int i = 0; i < MAX_TERMS_TO_SAVE && i < terms.size(); i++) {
             topTerms.add(terms.get(i));
         }
         termStorage.addTerms(topTerms);
     }
 
     private void countTerm(ArrayList<Term> terms, String t) {
-        if(!t.equals("") && !stopList.contains(t.toLowerCase())) {
+        if(!t.equals("") && !STOPLIST.contains(t.toLowerCase())) {
             Term aux = new Term(t);
             if(terms.contains(aux)) {
                 int index = terms.indexOf(aux);
@@ -70,7 +70,7 @@ public class TermExtractor {
         return s.split(" ");
     }
 
-    private static ArrayList<String> getStopList() {
+    private static ArrayList<String> loadStopList() {
         try (BufferedReader reader = new BufferedReader(new FileReader("Sources/stopList.txt"))) {
             String line;
             ArrayList<String> list = new ArrayList<>();

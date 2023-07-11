@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TermExtractorTest {
-    private final int numTermsTest = 50;
+    private final int MAX_TERMS_TO_SAVE = 50;
     private static ArticleStorage articleStorage = new FileArticleStorage("./Storage/Test");
     private static TermStorage termStorage = new FileTermStorage("./Storage/Test");
     private TermExtractor extractor;
 
     @BeforeEach
     public void setup() {
-        extractor = new TermExtractor(numTermsTest);
+        extractor = new TermExtractor(MAX_TERMS_TO_SAVE);
         extractor.setArticleStorage(articleStorage);
         extractor.setTermStorage(termStorage);
         termStorage.clearStorage();

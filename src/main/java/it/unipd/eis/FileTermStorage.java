@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  * in a file-based storage system.
  */
 public class FileTermStorage implements TermStorage {
-    private final String filePath;
+    private final String FILE_PATH;
 
     /**
      * Constructs a FileTermStorage object with the specified file path.
@@ -18,8 +18,8 @@ public class FileTermStorage implements TermStorage {
      */
     public FileTermStorage(String dirPath) {
         StorageUtils.createDirectoryIfNotExists(dirPath);
-        this.filePath = dirPath + "/terms.txt";
-        StorageUtils.createFileIfNotExists(filePath);
+        this.FILE_PATH = dirPath + "/terms.txt";
+        StorageUtils.createFileIfNotExists(FILE_PATH);
     }
 
     /**
@@ -84,7 +84,7 @@ public class FileTermStorage implements TermStorage {
     @Override
     public ArrayList<Term> getAllTerms() {
         ArrayList<Term> terms = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(":");
@@ -148,7 +148,7 @@ public class FileTermStorage implements TermStorage {
      * @param terms the list of terms to save
      */
     private void saveTerms(ArrayList<Term> terms) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (Term term : terms) {
                 writer.write(term.getTerm() + ": " + term.getWeight());
                 writer.newLine();

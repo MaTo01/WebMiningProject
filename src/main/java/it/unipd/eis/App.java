@@ -5,10 +5,10 @@ import org.apache.commons.cli.*;
 
 public class App 
 {
-    public static final String fileArticleStoragePath = "Storage";
-    public static final String fileTermStoragePath = "Storage";
-    public static final int numArticlesToDownload = 1000;
-    public static final int numTermsToSave = 50;
+    private static final String FILE_ARTICLE_STORAGE_PATH = "Storage";
+    private static final String FILE_TERM_STORAGE_PATH = "Storage";
+    private static final int NUM_ARTICLES_TO_DOWNLOAD = 1000;
+    private static final int MAX_TERMS_TO_SAVE = 50;
 
     public static void main(String[] args) {
         Options options = new Options();
@@ -28,13 +28,13 @@ public class App
                 String query = cmd.getOptionValue("d");
 
                 if(!query.equals("")) {
-                    Source.setStorage(new FileArticleStorage(fileArticleStoragePath));
+                    Source.setArticleStorage(new FileArticleStorage(FILE_ARTICLE_STORAGE_PATH));
                     TheGuardianAPISource theGuardianSource = new TheGuardianAPISource();
-                    theGuardianSource.setNumArticles(numArticlesToDownload);
+                    theGuardianSource.setNumArticles(NUM_ARTICLES_TO_DOWNLOAD);
                     CSVSource csvSource = new CSVSource("nytimes_articles_v2.csv");
+                    Source.clearStorage();
 
                     System.out.println("Starting download using search term(s) \"" + query + "\".");
-                    Source.clearStorage();
                     theGuardianSource.downloadArticles(query);
                     csvSource.downloadArticles();
 
@@ -44,19 +44,19 @@ public class App
                 }
             }
             if(cmd.hasOption("e")) {
-                File articlesFile = new File(fileArticleStoragePath + "/articles.json");
+                File articlesFile = new File(FILE_ARTICLE_STORAGE_PATH + "/articles.json");
                 if (!articlesFile.exists()) {
                     throw new IllegalStateException("Uninitialized or invalid storage(s).");
                 }
 
-                FileArticleStorage articleStorage = new FileArticleStorage(fileArticleStoragePath);
-                FileTermStorage termStorage = new FileTermStorage(fileTermStoragePath);
-                TermExtractor extractor = new TermExtractor(numTermsToSave);
+                FileArticleStorage articleStorage = new FileArticleStorage(FILE_ARTICLE_STORAGE_PATH);
+                FileTermStorage termStorage = new FileTermStorage(FILE_TERM_STORAGE_PATH);
+                TermExtractor extractor = new TermExtractor(MAX_TERMS_TO_SAVE);
                 extractor.setArticleStorage(articleStorage);
                 extractor.setTermStorage(termStorage);
+                termStorage.clearStorage();
 
                 System.out.println("Starting extraction of top terms.");
-                termStorage.clearStorage();
                 extractor.extractTerms();
 
                 System.out.println("Extraction of top terms complete. See terms.txt file for results.");
