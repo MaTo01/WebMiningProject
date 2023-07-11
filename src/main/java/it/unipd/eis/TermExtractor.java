@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class TermExtractor {
-    private TermStorage termStorage;
-    private ArticleStorage articleStorage;
     private final int MAX_TERMS_TO_SAVE;
     private static final String STOPLIST_FILE_PATH = "Sources/stopList.txt";
     private static final ArrayList<String> STOPLIST = loadStopList();
+    private TermStorage termStorage;
+    private ArticleStorage articleStorage;
     private ArrayList<Term> terms;
 
     /**
