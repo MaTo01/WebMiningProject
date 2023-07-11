@@ -22,7 +22,7 @@ public class CSVSource extends Source {
     }
 
     /**
-     * Reads all articles from the CSV file
+     * Reads all articles from the CSV file and serializes them.
      */
     @Override
     public void downloadArticles() {
@@ -50,7 +50,7 @@ public class CSVSource extends Source {
     }
 
     /**
-     * Dummy method
+     * Dummy method; a search query is not necessary for CSV files.
      * @param query dummy parameter
      */
     public void downloadArticles(String query) {
