@@ -29,7 +29,7 @@ public class FileTermStorage implements TermStorage {
      */
     @Override
     public void addTerm(Term term) {
-        List<Term> existingTerms = getAllTerms();
+        ArrayList<Term> existingTerms = getAllTerms();
         existingTerms.add(term);
         saveTerms(existingTerms);
     }
@@ -44,7 +44,7 @@ public class FileTermStorage implements TermStorage {
      */
     @Override
     public void addTerms(List<Term> terms) {
-        List<Term> existingTerms = getAllTerms();
+        ArrayList<Term> existingTerms = getAllTerms();
         existingTerms.addAll(terms);
         saveTerms(existingTerms);
     }
@@ -56,7 +56,7 @@ public class FileTermStorage implements TermStorage {
      */
     @Override
     public void removeTerm(Term term) {
-        List<Term> existingTerms = getAllTerms();
+        ArrayList<Term> existingTerms = getAllTerms();
         existingTerms.remove(term);
         saveTerms(existingTerms);
     }
@@ -108,7 +108,7 @@ public class FileTermStorage implements TermStorage {
      */
     @Override
     public int getTermCount() {
-        List<Term> terms = getAllTerms();
+        ArrayList<Term> terms = getAllTerms();
         return terms.size();
     }
 
@@ -120,7 +120,7 @@ public class FileTermStorage implements TermStorage {
      */
     @Override
     public boolean containsTerm(Term term) {
-        List<Term> terms = getAllTerms();
+        ArrayList<Term> terms = getAllTerms();
         return terms.contains(term);
     }
 
@@ -147,7 +147,7 @@ public class FileTermStorage implements TermStorage {
      *
      * @param terms the list of terms to save
      */
-    private void saveTerms(List<Term> terms) {
+    private void saveTerms(ArrayList<Term> terms) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (Term term : terms) {
                 writer.write(term.getTerm() + ": " + term.getWeight());
