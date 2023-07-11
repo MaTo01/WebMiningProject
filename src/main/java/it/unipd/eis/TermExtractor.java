@@ -16,10 +16,10 @@ public class TermExtractor {
 
     /**
      * Constructs a TermExtractor using the specified maximum number of terms to save.
-     * @param num the maximum number of terms to save
+     * @param numTermsToSave the maximum number of terms to save
      */
-    public TermExtractor(int num) {
-        MAX_TERMS_TO_SAVE = num;
+    public TermExtractor(int numTermsToSave) {
+        MAX_TERMS_TO_SAVE = numTermsToSave;
         terms = new ArrayList<>();
     }
 
@@ -53,10 +53,10 @@ public class TermExtractor {
             String[] body = splitAndReformat(a.getBody());
 
             for(String t : title) {
-                countTerm(terms, t.toLowerCase());
+                countTerm(t.toLowerCase());
             }
             for(String t : body) {
-                countTerm(terms, t.toLowerCase());
+                countTerm(t.toLowerCase());
             }
         }
 
@@ -79,10 +79,9 @@ public class TermExtractor {
      * Adds a previously not encountered Term into the terms list,
      * increments its weight if it has already been encountered,
      * or ignores it if it's in the stoplist
-     * @param terms the list of Terms currently found
      * @param t the term in String format to be checked
      */
-    private void countTerm(ArrayList<Term> terms, String t) {
+    private void countTerm(String t) {
         if(!t.equals("") && !STOPLIST.contains(t.toLowerCase())) {
             Term aux = new Term(t);
             if(terms.contains(aux)) {
