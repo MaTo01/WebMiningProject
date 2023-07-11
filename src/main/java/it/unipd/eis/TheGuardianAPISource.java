@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class TheGuardianAPISource extends Source {
     private String apiKey;
-    private String apiKeyFilePath = "Sources/TheGuardianAPIKey.txt";
+    private final String API_KEY_FILE_PATH;
     private static final int PAGE_SIZE = 200;
     private int numArticles = 1000;
 
@@ -21,6 +21,7 @@ public class TheGuardianAPISource extends Source {
      * Constructs a TheGuardianAPISource using the default API key file path.
      */
     public TheGuardianAPISource() {
+        API_KEY_FILE_PATH = "Sources/TheGuardianAPIKey.txt";
         getApiKey();
     }
 
@@ -29,7 +30,7 @@ public class TheGuardianAPISource extends Source {
      * @param keyPath the file path of the API key
      */
     public TheGuardianAPISource(String keyPath) {
-        apiKeyFilePath = keyPath;
+        API_KEY_FILE_PATH = keyPath;
         getApiKey();
     }
 
@@ -49,7 +50,7 @@ public class TheGuardianAPISource extends Source {
     }
 
     /**
-     * Queries TheGuardian API using the specified search string to obtain articles.
+     * Queries TheGuardian API using the specified search string to obtain articles and serializes them.
      * @param query the String to use as keyword for the search
      */
     @Override
@@ -91,7 +92,7 @@ public class TheGuardianAPISource extends Source {
      * Loads the API key from the previously specified file.
      */
     private void getApiKey() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(apiKeyFilePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(API_KEY_FILE_PATH))) {
             apiKey = reader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
