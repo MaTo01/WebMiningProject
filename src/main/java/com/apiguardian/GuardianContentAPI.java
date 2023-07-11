@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class GuardianContentApi {
+public class GuardianContentAPI {
 
   static {
 // Only one time
@@ -52,7 +52,7 @@ public class GuardianContentApi {
   private int pageSize = 0;
   private int page = 1;
 
-  public GuardianContentApi(final String apiKey) {
+  public GuardianContentAPI(final String apiKey) {
     this.apiKey = apiKey;
   }
 

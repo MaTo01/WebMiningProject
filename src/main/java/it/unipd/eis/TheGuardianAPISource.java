@@ -1,6 +1,6 @@
 package it.unipd.eis;
 
-import com.apiguardian.GuardianContentApi;
+import com.apiguardian.GuardianContentAPI;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import org.apache.http.client.HttpResponseException;
 
@@ -58,7 +58,7 @@ public class TheGuardianAPISource extends Source {
             throw new IllegalStateException("Uninitialized or invalid storage.");
         }
 
-        GuardianContentApi guardianApi = new GuardianContentApi(apiKey);
+        GuardianContentAPI guardianApi = new GuardianContentAPI(apiKey);
         guardianApi.setPageSize(pageSize);
 
         try {
