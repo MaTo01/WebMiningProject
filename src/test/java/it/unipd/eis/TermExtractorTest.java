@@ -18,6 +18,7 @@ public class TermExtractorTest {
         extractor.setArticleStorage(articleStorage);
         extractor.setTermStorage(termStorage);
         termStorage.clearStorage();
+        articleStorage.clearStorage();
     }
 
     @Test
