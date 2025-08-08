@@ -1,0 +1,334 @@
+<mxfile host="app.diagrams.net" modified="2023-07-11T20:23:25.078Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="NaduX9Vo4C6dI-0x5Xgp" version="21.6.2" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="2378" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="l8APdapLIqNNV060CVYQ-28" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-1500" y="120" width="830" height="1010" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-27" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-480" y="-40" width="2240" height="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-9" target="hwsk1BsRJwDkoARY7-cJ-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-9" target="hwsk1BsRJwDkoARY7-cJ-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-9" target="hwsk1BsRJwDkoARY7-cJ-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-9" target="hwsk1BsRJwDkoARY7-cJ-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-9" target="hwsk1BsRJwDkoARY7-cJ-30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-9" value="App" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="410" width="310" height="184" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-10" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- FILE_ARTICLE_SOURCE_PATH: String&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- FILE_ARTICLE_STORAGE_PATH: String&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- FILE_TERM_STORAGE_PATH: String&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- NUM_ARTICLES_TO_DOWNLOAD: int&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- MAX_TERMS_TO_SAVE: int&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-9" vertex="1">
+          <mxGeometry y="26" width="310" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-9" vertex="1">
+          <mxGeometry y="130" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-12" value="&lt;div style=&quot;font-size: 14px;&quot; align=&quot;left&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;+ main(args: String[]): void&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-9" vertex="1">
+          <mxGeometry y="138" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.998;exitY=0.664;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=0;exitPerimeter=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-16" target="hwsk1BsRJwDkoARY7-cJ-45" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-25" y="602" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-13" value="TheGuardianAPISource" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-430" y="370" width="280" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-14" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- apiKey: String&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- API_KEY_FILE_PATH: String&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- PAGE_SIZE: int&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- numArticles: int&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-13" vertex="1">
+          <mxGeometry y="26" width="280" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-15" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-13" vertex="1">
+          <mxGeometry y="110" width="280" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-16" value="&lt;div align=&quot;left&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;+ TheGuardianAPISource()&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;+ TheGuardianAPISource(keyPath: String)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;+ setNumArticles(numArticles: int): void&lt;br style=&quot;font-size: 14px;&quot;&gt;+ downloadArticles(): void&lt;br style=&quot;font-size: 14px;&quot;&gt;+ downloadArticles(query: String): void&lt;br style=&quot;font-size: 14px;&quot;&gt;- loadApiKey(): void&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-13" vertex="1">
+          <mxGeometry y="118" width="280" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1.004;exitDx=0;exitDy=0;endArrow=block;endFill=0;exitPerimeter=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-21" edge="1" target="hwsk1BsRJwDkoARY7-cJ-45">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-42" y="790" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="40" y="680" />
+              <mxPoint x="110" y="680" />
+            </Array>
+            <mxPoint x="-50" y="530" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-18" value="CSVSource" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-90" y="370" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-19" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- FILE_NAME: String&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-18" vertex="1">
+          <mxGeometry y="26" width="260" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-18" vertex="1">
+          <mxGeometry y="60" width="260" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-21" value="&lt;div align=&quot;left&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;+ CSVSource(file: String)&lt;br style=&quot;font-size: 14px;&quot;&gt;+ downloadArticles(): void&lt;br style=&quot;font-size: 14px;&quot;&gt;+ downloadArticles(query: String): void&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-18" vertex="1">
+          <mxGeometry y="68" width="260" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;endArrow=block;endFill=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-22" target="hwsk1BsRJwDkoARY7-cJ-58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-22" value="FileArticleStorage" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="220" y="370" width="360" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-23" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- FILE_PATH: String&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-22" vertex="1">
+          <mxGeometry y="26" width="360" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-24" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-22" vertex="1">
+          <mxGeometry y="60" width="360" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-25" value="&lt;div align=&quot;left&quot; style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ FileArticleStorage(dirPath: String)&lt;br style=&quot;font-size: 14px;&quot;&gt;+ addArticle(article: Article): void&lt;br style=&quot;font-size: 14px;&quot;&gt;+ addArticles(articles: List&amp;lt;Article&amp;gt;): void&lt;br style=&quot;font-size: 14px;&quot;&gt;+ removeArticle(article: Article): void&lt;br style=&quot;font-size: 14px;&quot;&gt;+ getAllArticles(): ArrayList&amp;lt;Article&amp;gt;&lt;br style=&quot;font-size: 14px;&quot;&gt;+ getArticleCount(): int&lt;br style=&quot;font-size: 14px;&quot;&gt;+ containsArticle(article: Article): boolean&lt;br style=&quot;font-size: 14px;&quot;&gt;+ isEmpty(): boolean&lt;br style=&quot;font-size: 14px;&quot;&gt;+ clearStorage(): void&lt;br style=&quot;font-size: 14px;&quot;&gt;- saveArticles(articles: ArrayList&amp;lt;Article&amp;gt;): void&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-22" vertex="1">
+          <mxGeometry y="68" width="360" height="242" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;dashPattern=8 8;endArrow=block;endFill=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-26" target="hwsk1BsRJwDkoARY7-cJ-69" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-26" value="FileTermStorage" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="630" y="370" width="350" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-27" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- FILE_PATH: String&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-26" vertex="1">
+          <mxGeometry y="26" width="350" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-28" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-26" vertex="1">
+          <mxGeometry y="60" width="350" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-29" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ FileTermStorage(dirPath: String)&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ addTerm(term: Term): void&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ addTerms(terms: List&amp;lt;Term&amp;gt;): void&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ removeTerm(term: Term): void&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getTopTermsByWeight(count: int): ArrayList&amp;lt;Term&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getAllTerms(): ArrayList&amp;lt;Term&amp;gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getTermCount(): int&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ containsTerm(term: Term): boolean&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ isEmpty(): boolean&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ clearStorage(): void&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- saveTerms(terms: ArrayList&amp;lt;Term&amp;gt;): void&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-26" vertex="1">
+          <mxGeometry y="68" width="350" height="242" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.998;entryY=0.755;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=diamondThin;startFill=1;exitX=0.275;exitY=1.001;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-33" target="hwsk1BsRJwDkoARY7-cJ-71" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1530" y="350" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-30" value="TermExtractor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1330" y="350" width="380" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-31" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- MAX_TERMS_TO_SAVE: int&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot;&gt;- STOPLIST_FILE_PATH: String&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color);&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot;&gt;- STOPLIST: ArrayList&amp;lt;String&amp;gt;&lt;/font&gt;&lt;/div&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- articleStorage: ArticleStorage&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- termStorage: TermStorage&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- terms: ArrayList&amp;lt;Terms&amp;gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-30" vertex="1">
+          <mxGeometry y="26" width="380" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-32" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-30" vertex="1">
+          <mxGeometry y="140" width="380" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-33" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;+ TermExtractor(numTermsToSave: int)&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setArticleStorage(articleStorage: ArticleStorage): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setTermStorage(termStorage: TermStorage): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ extractTerms(): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- splitAndReformat(s: String): String[]&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- countTerm(t: String): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- serializeTerms(): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- loadStopList(): ArrayList&amp;lt;String&amp;gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-30" vertex="1">
+          <mxGeometry y="148" width="380" height="182" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-40" target="hwsk1BsRJwDkoARY7-cJ-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-1305" y="40" />
+              <mxPoint x="-580" y="40" />
+              <mxPoint x="-580" y="438" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-40" value="GuardianContentAPI" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-1460" y="190" width="310" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-41" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- TARGET_URL: String&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- dateFormat: SimpleDateFormat&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- apiKey: String&amp;nbsp; &amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- section: String&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- tag: String&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- fromDate: Date&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- toDate: Date&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- pageSize: int&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- page: int&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-40" vertex="1">
+          <mxGeometry y="26" width="310" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-42" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-40" vertex="1">
+          <mxGeometry y="190" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-43" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;+ GuardianContentAPI(apiKey: String)&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setSection(section: String): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setFromDate(date: Date): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setToDate(date: Date): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setPageSize(size: int): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setPage(page: int): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setTag(tag: String): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getTag(): String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getContent(): Response&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getContent(query: String): Response&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-40" vertex="1">
+          <mxGeometry y="198" width="310" height="222" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=-0.013;exitY=0.194;exitDx=0;exitDy=0;entryX=1.001;entryY=0.333;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=diamondThin;startFill=1;entryPerimeter=0;fontFamily=Lucida Console;fontSize=14;exitPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-48" target="hwsk1BsRJwDkoARY7-cJ-54" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-100" y="946" />
+              <mxPoint x="-160" y="945" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=none;endFill=0;startArrow=diamondThin;startFill=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-45" target="hwsk1BsRJwDkoARY7-cJ-58" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="945" />
+              <mxPoint x="220" y="945" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-45" value="Source" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-100" y="830" width="300" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-46" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;# articles: ArrayList&amp;lt;Article&amp;gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;# articleStorage: ArticleStorage&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-45" vertex="1">
+          <mxGeometry y="26" width="300" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-47" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-45" vertex="1">
+          <mxGeometry y="80" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-48" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setArticleStorage(as: ArticleStorage): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+&lt;i&gt; downloadArticles(): void&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+&lt;i&gt; downloadArticles(query: String): void&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;# serializeArticles(): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ clearStorage(): void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-45" vertex="1">
+          <mxGeometry y="88" width="300" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-51" value="Article" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="-450" y="780" width="290" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-52" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;- id: String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- title: String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- body: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-51" vertex="1">
+          <mxGeometry y="26" width="290" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-53" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-51" vertex="1">
+          <mxGeometry y="100" width="290" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-54" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;+ Article(title: String, body: String)&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getId(): String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getTitle(): String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getBody(): String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setId(id: String): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setTitle(title: String): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setBody(body: String): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ equals(obj: Object): boolean&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-51" vertex="1">
+          <mxGeometry y="108" width="290" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=1;startArrow=none;startFill=0;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="1140" />
+              <mxPoint x="1600" y="1140" />
+              <mxPoint x="1600" y="682" />
+            </Array>
+            <mxPoint x="470" y="1100.0000000000002" as="sourcePoint" />
+            <mxPoint x="1600" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-58" value="ArticleStorage" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="250" y="830" width="300" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-60" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-58" vertex="1">
+          <mxGeometry y="26" width="300" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-61" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;+ addArticle(article: Article): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ addArticles(articles: List&amp;lt;Article&amp;gt;): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ removeArticle(article: Article): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getAllArticles(): ArrayList&amp;lt;Article&amp;gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getArticleCount(): int&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ containsArticle(article: Article): boolean&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ isEmpty(): boolean&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ clearStorage(): void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-58" vertex="1">
+          <mxGeometry y="34" width="300" height="236" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-69" value="TermStorage" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="650" y="830" width="310" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-70" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-69" vertex="1">
+          <mxGeometry y="26" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-71" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;+ addTerm(term: Term): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ addTerms(terms: List&amp;lt;Term&amp;gt;): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ removeTerm(term: Term): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getTopTermsByWeight(count: int): ArrayList&amp;lt;Term&amp;gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getAllTerms(): ArrayList&amp;lt;Term&amp;gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getTermCount(): int&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ containsTerm(term: Term): boolean&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ isEmpty(): boolean&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ clearStorage(): void&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-69" vertex="1">
+          <mxGeometry y="34" width="310" height="186" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;startFill=0;endArrow=diamondThin;endFill=1;fontFamily=Lucida Console;fontSize=14;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-79">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1330" y="564" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1330" y="564" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-76" value="Term" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="1050" y="350" width="220" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-77" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;- term: String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- weight: int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-76" vertex="1">
+          <mxGeometry y="26" width="220" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-78" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-76" vertex="1">
+          <mxGeometry y="80" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="hwsk1BsRJwDkoARY7-cJ-79" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;+ Term(term: String)&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ Term(term: String, weight: int)&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getTerm(): String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getWeight(): int&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setTerm(term: String): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setWeight(weight: int): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ equals(obj: Object): boolean&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ hashCode(): int&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ compareTo(o: Term): int&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" parent="hwsk1BsRJwDkoARY7-cJ-76" vertex="1">
+          <mxGeometry y="88" width="220" height="252" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.203;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;fontFamily=Lucida Console;fontSize=14;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-71" target="hwsk1BsRJwDkoARY7-cJ-79">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1180" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.247;exitY=1.001;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;fontFamily=Lucida Console;fontSize=14;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="hwsk1BsRJwDkoARY7-cJ-61" target="hwsk1BsRJwDkoARY7-cJ-54">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="324" y="1140" />
+              <mxPoint x="-320" y="1140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-4" value="Response" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-1070" y="740" width="330" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-5" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;- status: String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- userTier: String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- total: int&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- startIndex: int&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- pageSize: int&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- currentPage: int&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- pages: int&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- orderBy: String&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;- results: Article[]&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="l8APdapLIqNNV060CVYQ-4">
+          <mxGeometry y="26" width="330" height="164" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="l8APdapLIqNNV060CVYQ-4">
+          <mxGeometry y="190" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-7" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;+ Response()&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;background-color: initial;&quot;&gt;+ Response(status: String,&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;background-color: initial;&quot;&gt;userTier: String, total: int,&amp;nbsp;startIndex: int,&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;pageSize: int,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;currentPage: int,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;pages: int.&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;orderBy: String,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;results: Article[]&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ [getters]&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ [setters]&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="l8APdapLIqNNV060CVYQ-4">
+          <mxGeometry y="198" width="330" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-8" value="ResponseWrapper" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-1450" y="860" width="270" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-9" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;- response: Response&lt;/font&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="l8APdapLIqNNV060CVYQ-8">
+          <mxGeometry y="26" width="270" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-10" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="l8APdapLIqNNV060CVYQ-8">
+          <mxGeometry y="70" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-11" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;+ ResponseWrapper()&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ ResponseWrapper(response: Response)&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ setResponse(response: Response): void&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ getResponse(): Response&lt;br style=&quot;font-size: 14px;&quot;&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="l8APdapLIqNNV060CVYQ-8">
+          <mxGeometry y="78" width="270" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-12" value="Article" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-1070" y="160" width="330" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-13" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;p style=&quot;&quot;&gt;+ id: String&lt;br&gt;+ type: String&lt;br&gt;+ sectionId: String&lt;br&gt;+ sectionName: String&lt;br&gt;+ webPublicationDate: String&lt;br&gt;+ webTitle: String&lt;br&gt;+ webUrl: String&lt;br&gt;+ apiUrl: String&lt;br&gt;+ isHosted: boolean&lt;br&gt;+ pillarId: String&lt;br&gt;+ pillarName: String&lt;br&gt;+ bodyText: String&lt;/p&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="l8APdapLIqNNV060CVYQ-12">
+          <mxGeometry y="26" width="330" height="234" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-14" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="l8APdapLIqNNV060CVYQ-12">
+          <mxGeometry y="260" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-15" value="&lt;div style=&quot;&quot;&gt;+ Article()&lt;/div&gt;&lt;div style=&quot;&quot;&gt;+ Article(id: String, type: String, sectionId: String, sectionName: String, webPublicationDate: String, webTitle: String, webUrl: String, apiUrl: String, isHosted: boolean, pillarId: String, pillarName: String, bodyText: String)&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ [getters]&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ [setters]&lt;/div&gt;&lt;div style=&quot;font-size: 14px;&quot;&gt;+ toString: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Lucida Console;fontSize=14;" vertex="1" parent="l8APdapLIqNNV060CVYQ-12">
+          <mxGeometry y="268" width="330" height="202" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1070" y="1000" as="sourcePoint" />
+            <mxPoint x="-1180" y="1000" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-1070" y="1000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.488;entryY=0.999;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="hwsk1BsRJwDkoARY7-cJ-43">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1070" y="820" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="-1070" y="820" />
+              <mxPoint x="-1310" y="820" />
+              <mxPoint x="-1310" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.498;exitY=1.001;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=diamondThin;endFill=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="l8APdapLIqNNV060CVYQ-15" target="l8APdapLIqNNV060CVYQ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.001;entryY=0.623;entryDx=0;entryDy=0;endArrow=none;endFill=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="l8APdapLIqNNV060CVYQ-5" target="hwsk1BsRJwDkoARY7-cJ-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-610" y="848" />
+              <mxPoint x="-610" y="595" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.005;entryY=0.226;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="l8APdapLIqNNV060CVYQ-13" target="hwsk1BsRJwDkoARY7-cJ-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-640" y="303" />
+              <mxPoint x="-640" y="527" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-29" value="com.apiguardian" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;dashed=1;fontFamily=Lucida Console;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-1500" y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l8APdapLIqNNV060CVYQ-36" value="it.unipd.eis" style="text;html=1;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Lucida Console;dashed=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="-480" y="-70" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
